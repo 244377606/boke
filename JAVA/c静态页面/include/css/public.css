@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/* 通用属性 */
+	.w1024{
+		width:1024px;
+		margin:0 auto;
+	}
+	body{
+	   min-width:1024px;
+	}
+
+
+/* 浮动 */
+	.fr_child::after,
+	.fl_child::after,
+	.clearFix::after{
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		clear: both;
+	}
+	.fr_child::after,
+	.fl_child::after,
+	.clearFix::after{
+		*zoom:1;
+	}
+	.fl,.fl_child>*{
+		float:left;
+	}
+	.fr,.fr_child>*{
+		float:right;
+	}
+/* 定位 */
+	.rela{
+		position:relative;
+	}
+	.abso{
+		position:absolute;
+	}
+	.fixed{
+		position:fixed;
+	}
+/* 文本处理 */
+	.t_ellipsis{
+		overflow:hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.t_center{text-align:center;}
+
+/*辅助*/
+	.bd{border:1px solid red;}
+	.red{background-color:red;}
+	.green{background-color:green;}
+
+
+/* 分页 标签 */
+.page{
+	width:100%;
+	text-align:center;
+	margin: 50px 0;
+}
+.page a{
+	color: #fff;
+	display:inline-block;
+	font:16px/30px '黑体';
+	width: 30px;height:30px;
+	border-radius: 50%;
+	background:rgba(0,0,0,0.4);
+	transition: all 0.5s;
+	margin:0 5px;
+}
+.page a:nth-child(2){
+	color: red;
+	background:rgba(0,0,0,0.7);
+}
+.page a:hover{
+	color: red;
+	background:rgba(0,0,0,0.7);
+}

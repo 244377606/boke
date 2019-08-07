@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.chao.mapper.CommentDao">
+	
+<!-- ===================留言信息================== -->
+	<!-- 查询留言信息 -->
+	<select id="selectCommentAll" parameterType="PageData" resultType="Comment">
+		select * from comments
+		<where>
+			<if test="username != null and username != ''">
+				and userAccount = #{username}
+			</if>
+		</where>
+		order by commentTime desc
+		limit #{startPage},#{limit}
+	</select>
+	
+	<!-- 查询留言 总数 -->
+	<select id="selectCommentCount" parameterType="PageData" resultType="Integer">
+		select count(1) from comments
+		<where>
+			<if test="username != null and username != ''">
+				and userAccount = #{username}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 单id 删除留言 -->
+	<delete id="deleteCommentById" parameterType="Integer">
+		delete from comments
+		where commentId = #{id}
+	</delete>
+
+	<!-- 多id 删除 留言  -->
+	<delete id="deleteCommentByIds" parameterType="Integer[]">
+		delete from comments where 
+		<foreach collection="array" item="ids" separator="," open="commentId in(" close=")">
+			#{ids}
+		</foreach>
+	</delete>
+
+	<!-- 查询留言内容 -->
+		<select id="selectCommentByid" parameterType="Integer" resultType="Comment">
+		select * from comments
+		where commentId = #{id}
+	</select>
+	
+
+	<!-- 修改留言信息  --> 
+	<update id="UpdateComment" parameterType="PageData">
+		update comments set
+		commentContent = #{commentContent}
+		where commentId = #{commentId}
+	</update>
+
+
+	
+</mapper>

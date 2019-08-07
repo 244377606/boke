@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.chao.mapper.AlbumDao">
+	
+	<!-- 查询所有的相册 -->
+	<select id="selectAlbum" resultType="Album">
+		select * from album
+	</select>
+	
+	<!-- 查询最新的照片 -->
+	<select id="selectPhotoNew" resultType="Photo">
+		select * from photo
+		order by photoTime desc
+		limit 0,10
+	</select>
+	
+	<!-- 查询某相册的所有照片 -->
+	<select id="selectPhotoByAlbumId" parameterType="QueryVo" resultType="Photo">
+		select * from photo
+		where albumId = #{albumId}
+	</select>
+	
+	<!-- 查询相册名称 -->
+	<select id="selectAlbumNameById" parameterType="QueryVo" resultType="Album">
+		select * from album
+		where albumId = #{albumId}
+	</select>
+	
+	<!-- 查询某相册 照片数量 -->
+	<select id="selectPhotoNum" parameterType="QueryVo" resultType="Integer">
+		select count(1) from photo
+		where albumId = #{albumId}
+	</select>
+	
+	<!-- 查询最新留言 -->
+	<select id="selectCommentNew" resultType="Comment">
+		select * from comments
+		order by commentTime desc
+		limit 0,5
+	</select>
+	
+	
+	
+</mapper>

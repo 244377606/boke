@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html  >
+<head>
+		<title>个人博客——留言板</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link href="../include/css/reset.css"   rel="stylesheet">  <!--重置样式 -->
+        <link href="../include/css/public.css"   rel="stylesheet">  <!--公共样式 -->
+        <link href="../include/iconfont/iconfont.css" rel="stylesheet">   <!--阿里图标css -->
+		<link href="../include/css/header.css"  rel="stylesheet">  <!--头部公用样式 -->
+		<link href="../include/css/zhuce.css"  rel="stylesheet">
+		<link href="../include/css/comment.css" rel="stylesheet">
+
+        <script src="../include/js/jquery-1.8.0.min.js"></script> <!--jq -->
+</head>
+
+<body>
+	<div id="ibody">
+	    <!-- 头部导航 -->
+	    <div id="header" class="rela">
+	        <div class="title">
+	            <h1>无尽轮回.途中的笑脸</h1>
+	            <h2>
+	               &emsp;do( a++,b++ ) while( a & b){ }
+	            </h2>
+	        </div>
+	        <div class="logo abso">
+	             <a href="#"></a>
+	        </div>
+
+	        <div class="topnav">
+	            <a href="../index.html" >首页</a>
+	            <a href="aboutMe.html">关于我</a>
+	            <a href="album.html">我的相册</a>
+	            <a href="###" class="onred">留言板</a>
+	            <a href="../admin/login.html" target="_blank">后台管理(待隐藏)</a>
+	        </div>
+	    </div>
+
+		<!-- 左边区域 -->
+	<div class="clearFix">
+		<div id="comment">
+	       <h2 class="about_h">您现在的位置是：
+	            <span style="color:red;">留言板<span>
+	        </h2>
+	        <div class="template1">
+	            <div class="newComment">
+	               <p>最 新 留 言</p>
+	            </div>
+	        </div>
+	        <!-- 展示 留言 信息 账户信息 -->
+			<div class="template">
+				<ul style="margin-bottom:20px;">
+						<li>
+					   		<img src="../include/images/001.jpg">
+					   </li>
+					   <li><span>帐号昵称</span>
+					   <time>留言时间</time></li>
+					   <li>
+					      留言内容留言内容留言内容留言内容留言内容留言内容
+					      留言内容留言内容留言内容留言内容留言内容留言内容
+					      留言内容留言内容留言内容留言内容留言内容留言内容
+					      留言内容留言内容留言内容留言内容留言内容留言内容
+					      留言内容留言内容留言内容留言内容留言内容留言内容
+					   </li>
+
+				</ul>
+				<div class="hr"></div>
+				<ul style="margin-bottom:20px;">
+					   <li>
+					   		<img src="../include/images/002.jpg">
+					   </li>
+					   <li><span>${comment.user_account}</span>
+					   <time>${comment.critique_time}</time></li>
+					   <li>
+					      ${comment.critique_content}
+					   </li>
+				</ul>
+				<div class="hr"></div>
+
+				<ul style="margin-bottom:20px;">
+					   <li>
+					   		<img src="../include/images/003.jpg">
+					   </li>
+					   <li><span>666</span>
+					   <time>6666</time></li>
+					   <li>
+					      6666666
+					   </li>
+				</ul>
+				<div class="hr"></div>
+                <!-- 分页 -->
+                <div class="page">
+                    <a href="###">&lt;</a>
+                    <a href="###">1</a>
+                    <a href="###">2</a>
+                    <a href="###">&gt;</a>
+                </div>
+				<!-- 分页 标签
+				<div>
+					<f:page url="${pageContext.request.contextPath }/comment"></f:page>
+				</div>
+				-->
+			</div>
+
+			<!-- 评论内容 -->
+			<div class="suiBian">
+				<p>留下足迹 : </p>
+				<p style="margin-bottom:10px;">=======================</p>
+
+				<form name="f1" action="###"  method="get">
+					<textarea id="hasContent" name="critique_content" ></textarea>
+					<input type="button" class="button"
+						   value="留言" onclick="ifLogin(false)"/>
+
+					<!-- 数据传递 ${USER.u_id} -->
+					<input type="hidden" name="user_account" value="${USER.u_account}" />
+					<input type="hidden" name="user_img" value="${USER.u_img}" />
+				</form>
+			</div>
+
+			<!--引入 登录页面  -->
+			<div id="mainLogin" class="fixed">
+			    <div class="topA">
+			        <span class="denglu1 dengluOn">登录</span>
+			        <i>|</i>
+			        <span class="zhuce1">注册</span>
+			    </div>
+			    <!-- 左边登录 -->
+			    <div class="leftLogin rela">
+			        <form name="f2" action="###" method="post">
+			            <div class="accountInput rela">
+			                <span>账 号 : </span>
+			                <input id="account" type="text" name="u_account"/>
+			                <div class="hidden1 abso"></div>
+			            </div>
+			            <div class="padInput rela">
+			                <span>密 码 : </span>
+			                <input id="password" type="password" name="u_password"/>
+			                <div class="hidden2 abso"></div>
+			            </div>
+			            <!-- 密码错误出现 -->
+			            <div class="cunZai">帐号密码错误</div>
+
+			            <div class="btnLogin clearFix">
+			            	<input type="button" value="确定"
+			                   class="submit" onclick="login()">
+			            	<input type="button" value="取消"
+			                   class="submit quxiao">
+			            </div>
+
+			          	<!-- 数据传递 -->
+			            <input type="hidden" name="id" value="${selectById.getId()}" />
+			        </form>
+			    </div>
+
+			    <!-- 右边注册 -->
+			    <div class="right_zhuce">
+			        <form name="f3" action="###" method="post" enctype="multipart/form-data" >
+			              <div class="aAccount rela">
+			                  <span>用户名:</span>
+			                  <input type="text" placeholder="请输入用户名"
+			                         id="Account" name="u_account">
+			                  <div class="absAccount abso"></div>
+			              </div>
+			              <div class="apassWord rela">
+			                  <span>密码:</span>
+			                  <input type="password" placeholder="请输入密码"
+			                         id="Password" name="u_password"/>
+			                  <div class="absPassWord abso"></div>
+			              </div>
+			              <div class="realPassWord rela">
+			                  <span>确认密码:</span>
+			                  <input type="password" value="" placeholder="请再次输入密码"
+			                         id="realPassWord">
+			                  <div class="realPass abso"></div>
+			              </div>
+			              <div class="sex">
+			                  <span>性别:</span>
+			                  <input type="radio" name="u_sex" checked value="男"><i>男</i>
+			                  <input type="radio" name="u_sex"  value="女"><i>女</i>
+			                  <input type="radio" name="u_sex"  value="东方不败"><i>东方不败</i>
+			              </div>
+						<div>
+							<span>上传脑袋:</span>
+							<input type="file" id="file" name="file" onchange="upImg()" class="imgFile"/>
+							<img id="imgLoad" class="imgUp" src="" width="100" height="100" alt="预 览" title=""/>
+
+							<input type="hidden" name="u_img" id="imgTouXing"/>
+						</div>
+						<div class="error"></div>
+		               	<div class="btnZhuCe fl_child">
+		               		<input type="button" class="sub1" value="注册" onclick="zhuce()">
+		             		<input type="button" value="取 消" class="sub2 quxiao">
+		               	</div>
+
+			             <!-- 数据传递 -->
+						 <input type="hidden" name="id" value="${selectById.getId()}" />
+
+			        </form>
+			    </div>
+
+			</div>
+
+
+			<script type="text/javascript">
+		    	//判断是 账号   否为空   为空则弹出登录框
+		    	function ifLogin(id){
+		    	  	if(!id){
+		    	  		$("#mainLogin").css({display:"block"});
+		    		}else{
+		    			if(!$("#hasContent").val()){
+		    				alert("内容不能为空");
+		    			}else{document.forms["f1"].submit();}
+		    		}
+
+		    	    //$("#mainLogin").css({display:"block"};
+		    	  	//$(".suiBian .button").click(function(){alert(1)});
+		    	}
+
+		    	//取消时隐藏登录框
+		    	$(" #mainLogin .quxiao").click(function(){
+		    	    $("#mainLogin").css({display:"none"});
+		        })
+
+		        //显示/隐藏  注册/登录
+		    	$(".zhuce1").click(function(){
+		    	    $(".right_zhuce").css({display:"block"});
+		    	    $(".topA .denglu1").removeClass("dengluOn");
+		    	    $(".topA .zhuce1").addClass("dengluOn");
+		    	    $(".leftLogin").css({display:"none"});
+		    	})
+		    	$(".denglu1").click(function(){
+		    	    $(".right_zhuce").css({display:"none"});
+		    	    $(".topA .denglu1").addClass("dengluOn");
+		    	    $(".topA .zhuce1").removeClass("dengluOn");
+		    	    $(".leftLogin").css({display:"block"});
+		    	})
+
+		    	//===========注册页面==================
+		    	//账户 焦点
+
+		        $(".right_zhuce #Account").blur(function(){
+		        	if( !$(".right_zhuce #Account").val() ){
+		        		$(".aAccount .absAccount").css({"display":"block"});
+		        		$(".aAccount .absAccount").html("<b style='color:red'>用户名不能为空 !</b>" )
+		        	}else{
+		        		$.ajax({
+		        			type:"get",
+		        			url:"${pageContext.request.contextPath }/relaAccount",
+		        			data:{"u_account":$(".right_zhuce #Account").val()},
+		        			success:function(data){
+		        				if(data){
+		        					$(".aAccount .absAccount").html("<b style='color:red'>用户名已存在</b>" );
+		        				}else{
+		        					$(".aAccount .absAccount").css({"display":"none"});
+		        			    }
+		        			}
+		        		})
+		        	}
+		        })
+
+				//失脚
+				$(".right_zhuce #Account").focus(function(){
+					$(".aAccount .absAccount").css({display:"block"});
+					$(".aAccount .absAccount").html("用户名由4-8位组成 ");
+				})
+
+				//密码 焦点
+				$(".right_zhuce #Password").blur(function(){
+					if( !$(".right_zhuce #Password").val() ){
+		        		$(".apassWord .absPassWord").css({"display":"block"});
+		        		$(".apassWord .absPassWord").html("<b style='color:red'>密码不能为空!</b>" );
+		        	}else{$(".apassWord .absPassWord").css({"display":"none"})}
+				})
+				//焦
+				$(".right_zhuce #Password").focus(function(){
+					$(".apassWord .absPassWord").css({display:"block"});
+					$(".apassWord .absPassWord").html("密码长度..... ");
+				})
+
+				//确认密码 失去焦点 判断两次密码是否一致
+				$(".right_zhuce #realPassWord").blur(function(){
+					var a = $(".right_zhuce #Password").val();    //密码
+					var b = $(".right_zhuce #realPassWord").val();
+					if(a!=b){
+		        		$(".realPassWord .realPass").css({"display":"block"});
+		        		$(".realPassWord .realPass").html("<b style='color:red'>两次密码不一致</b>" );
+		        	}else{$(".realPassWord .realPass").css({"display":"none"})}
+				})
+				//获得焦点 给提示
+				$(".right_zhuce #realPassWord").focus(function(){
+					$(".realPassWord .realPass").css({display:"block"});
+					$(".realPassWord .realPass").html("两次密码必须一致..... ");
+				})
+
+				//头像上传
+				function upImg(){
+					var name = $("#file").val();
+				    if(name){
+				    	 //正则判断是否为图片
+				    	 if(/\.(?:png|PNG|jpg|JPG|gif|GIF)$/.test(name)){
+				    		 var formData=new FormData(); //创建表单数据对象
+							     formData.append('file', $('#file')[0].files[0]);
+				    		 $.ajax({
+									type:"post",
+									url:"${pageContext.request.contextPath}/upImg",
+									data:formData,
+									cache: false, //上传文件不需要缓存
+									processData: false,// 告诉jQuery不要去处理发送的数据
+									contentType: false,// 告诉jQuery不要去设置Content-Type请求头
+									encType:"multipart/form-data",
+									success:function(data){
+										$("#imgLoad").attr("src","/img/"+data);
+										$("#imgTouXing").val(data);
+
+									}
+								});
+					     }else{
+					    	 alert("格式错误");
+					     }
+				    }
+				}
+
+
+				//判断是否可以成功登录
+				function zhuce(){
+					var c = $(".right_zhuce #Account").val();
+					var a = $(".right_zhuce #Password").val();    //密码
+					var b = $(".right_zhuce #realPassWord").val();
+
+		    		if( c && b==a){
+		    			document.forms["f3"].submit();
+		    		}else{
+		    			$(".right_zhuce .error").html("信息<i style='color:red'> 有 误 </i>,请修改后在提交")
+		    		}
+		    	}
+
+		        // 时间
+		        setInterval(function(){
+		            var date = new Date();
+		            var format = [
+		                  ("0" + date.getHours()).substr(-2)
+		                , ("0" + date.getMinutes()).substr(-2)
+		                , ("0" + date.getSeconds()).substr(-2)
+		            ].join(":");
+
+		            document.getElementById("Time").innerHTML = format;
+		        }, 200);
+
+
+		    	//=====================登录页面==================
+		    	//登录判断
+		    	function login(){
+		    		if($('#account').val() && $('#password').val()){
+		    			$.ajax({
+		    				type:"post",
+		    				url:"${pageContext.request.contextPath }/isLogin",
+		    				data:{
+		    					  u_account:$('#account').val(),
+		    					  u_password:$('#password').val()
+		    				},
+		    				success:function(data) {
+		    					  if(data){
+		    						  document.forms["f2"].submit();
+		    				      }
+		    					  if(!data){
+		    						  $("#mainLogin .hidden1").css({display:"none"});
+		    						  $("#mainLogin .hidden2").css({display:"none"});
+		    						  $("#mainLogin .cunZai").html("帐 号 或 密 码 错 误!!");
+		    					  }
+		    			   }
+		    			})
+		    		}else{
+		    			//账号 密码都为空 提示输入
+		    			if(!$('#account').val() && !$('#password').val()){
+		    				 $("#mainLogin .hidden1").css({display:"block"});
+		    				 $("#mainLogin .hidden2").css({display:"block"});
+		    				 $("#mainLogin .hidden1").html("请输入帐号");
+		    				 $("#mainLogin .hidden2").html("请输入密码");
+		    				 $("#mainLogin .cunZai").html("");
+		    			}
+		    			//账号为空 密码 不空  提示输入账号
+		    			if(!$('#account').val() && $('#password').val()){
+		    				$("#mainLogin .hidden1").css({display:"block"});
+		    				 $("#mainLogin .hidden2").css({display:"none"});
+		    				 $("#mainLogin .hidden1").html("请输入帐号");
+		    				 $("#mainLogin .hidden2").html("")
+		    				 $("#mainLogin .cunZai").html("");
+		    			}
+		    			if($('#account').val() && !$('#password').val()){
+		    				$("#mainLogin .hidden2").css({display:"block"});
+		    				 $("#mainLogin .hidden1").css({display:"none"});
+		    				 $("#mainLogin .hidden1").html("");
+		    				 $("#mainLogin .hidden2").html("请输入密码")
+		    				 $("#mainLogin .cunZai").html("");
+		    			}
+		    		}
+		    	}
+
+			</script>
+		<!-- 登录页面 结束 -->
+		</div>
+
+		<!-- 右边区域 -->
+		<div id="rightComment">
+			<div class="rnav">
+				<li class="rnav1 "><a
+					href="###">个人博客</a></li>
+				<li class="rnav2 "><a href="http://user.qzone.qq.com/3535305171">QQ空间</a></li>
+				<li class="rnav3 "><a
+					href="###">个人作品</a></li>
+				<li class="rnav4 "><a
+					href="###">随便逛逛</a></li>
+			</div>
+
+	        <div class="zx_news">
+	             <div class="new1">
+	                <p>最新信息</p>
+	                <ul>
+	                    <li><a href="###">最新1号</a></li>
+	                    <li><a href="###">最新2号</a></li>
+	                    <li><a href="###">最新3号</a></li>
+	                    <li><a href="###">最新4号</a></li>
+	                </ul>
+	             </div>
+
+	             <div class="new2">
+	                <p>推荐信息</p>
+	                <ul>
+	                    <li><a href="###">1111</a></li>
+	                    <li><a href="###">1111</a></li>
+	                    <li><a href="###">1111</a></li>
+	                    <li><a href="###">1111</a></li>
+	                </ul>
+	             </div>
+	        </div>
+
+			<div class="copyright" >
+				<ul>
+					<p>
+						Design by <a href="##">chao</a>
+					</p>
+					<p></p>
+					<p></p>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>
+	<script type="text/javascript">
+		var comment = $("#comment").height();  //获取右边笔记的 高度
+		$("#rightComment").css({minHeight:comment});  //设置右边的最小高度
+	</script>
+</body>
+</html>

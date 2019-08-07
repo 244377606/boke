@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.chao.mapper.CommentDao">
+	
+	
+	<!-- 查询留言的总条数 -->
+	<select id="selectCommentCount" resultType="Integer">
+		select count(1) from comments
+	</select>
+	
+	<!-- 分页查询留言信息 -->
+	<select id="selectCommentByPage" parameterType="QueryVo" resultType="Comment">
+		select * from comments
+		order by commentTime desc
+		limit #{startPage},#{size}
+	</select>
+	
+	<!-- 新增留言信息 -->
+	<insert id="insertComment" parameterType="QueryVo">
+		insert into comments(userId,userImg,userAccount,commentTime,commentContent)
+		values(#{user_id},#{user_img},#{user_account},#{critique_time},#{critique_content})
+	</insert>
+	
+	<!-- 删除留言 -->
+	<delete id="deleteCommentByid" parameterType="Comment">
+		delete from comments
+		where commentId = #{commentId}
+	</delete>
+
+ 
+	
+</mapper>

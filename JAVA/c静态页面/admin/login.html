@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理-登陆</title>
+
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="include/css/login.css">
+
+    <script src="include/js/jq.js"></script>
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+<div id="container">
+    <div></div>
+    <div class="admin-login-background">
+        <div class="admin-header">请登录</div>
+        <form name="userLogin" class="layui-form"  method="post" action="index.html">
+            <div>
+                <i class="layui-icon layui-icon-username admin-icon admin-icon-username"></i>
+                <input type="text" name="admin_name" placeholder="请输入用户名"
+                       id="username" autocomplete="off"
+                       class="layui-input admin-input admin-input-username">
+            </div>
+            <div>
+                <i class="layui-icon layui-icon-password admin-icon admin-icon-password"></i>
+                <input type="password" name="admin_password" id="password"
+                       placeholder="请输入密码"
+                       autocomplete="off"
+                       class="layui-input admin-input">
+            </div>
+
+			<div>
+			    <input type="text" name="code" id="code"  placeholder="请输入验证码"
+			           autocomplete="off"
+			           class="layui-input admin-input admin-input-verify">
+			    <img style="cursor:pointer;" class="admin-captcha codeimg" id="codeimg"
+			    	src="###">
+			</div>
+            <input type="button" class="layui-btn a-button" value="登录" onclick="login()" />
+        </form>
+    </div>
+</div>
+    <script>
+
+    	//用户登陆方法login();
+    	function login(){
+    		var username = $("#username").val();
+    		var password = $("#password").val();
+    		var code=$("#code").val();
+
+    		if(username==null || username==""){ //判断用户名是否输入
+    			layui.use('layer', function(){
+    			  	layer.open({
+    				  title: '提示信息'
+    				  ,content: '用户名不能为空'
+    				});
+    			});
+    			return false;
+    		}
+    		if(password==null || password==""){//判断密码是否输入
+    			layui.use('layer', function(){
+    			  	layer.open({
+    				  title: '提示信息'
+    				  ,content: '密码不能为空'
+    				});
+    			});
+    			return false;
+    		}
+    		if(code==null || code==""){//判断验证码是否输入
+    			layui.use('layer', function(){
+    			  	layer.open({
+    				  title: '提示信息'
+    				  ,content: '验证码不能为空'
+    				});
+    			});
+    			return false;
+    		}
+
+    		//都有值 则判断用户是否正确
+        	//切换验证码
+        	//加入时间戳，去缓存机制
+            if (username && password) {
+               document.forms["userLogin"].submit();
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+
+

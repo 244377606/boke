@@ -1,0 +1,103 @@
+﻿@charset "utf-8";
+/*清除样式*/
+	body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,input{
+		margin:0;
+		padding:0;
+	}
+	html,body{
+		font:14px/27px "Microsoft yahei";/* 设置整个页面默认的一个字体大小 行高 字体风格 */
+        width:100%;height:100%;
+	}
+	ul,ol,li{
+		 list-style:none; /*清除默认圆点 */
+	}
+	i,em{
+		font-style:normal;/* 重置斜体 */
+	}
+	b,strong{
+		font-weight:normal;/* 重置加粗 */
+	}
+	img{
+		vertical-align:top;/* 清除img的下边的距离 */
+		border:none;/* 解决低版本的IE下会默认出现边框的情况 */
+	}
+	a{
+		text-decoration:none; /* 清除下划线 */
+		color:inherit; /* 强制继承父级颜色 */
+	}
+
+/* 居中 */
+    .w1240{
+        width:1240px;height:100%;
+        margin:0 auto;
+    }
+    .minW{
+        min-width:1240px;
+        width:100%;
+    }
+
+/*公用样式*/
+	/* 浮动 */
+		/* 清除浮动 */
+		.fr_child::after,
+		.fl_child::after,
+		.clearFix::after{
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			clear: both;
+		}
+		/* 低版本ie */
+		.fr_child::after,
+		.fl_child::after,
+		.clearFix::after{
+			*zoom:1;
+		}
+		/* 左浮动 */
+		.fl,.fl_child>*{
+			float:left;
+		}
+		/* 右浮动 */
+		.fr,.fr_child>*{
+			float:right;
+		}
+
+	/* 定位 */
+		/* 相对 */
+		.rela{
+			position:relative;
+		}
+		/* 绝对 */
+		.abso{
+			position:absolute;
+		}
+		/* 固定 */
+		.fixed{
+			position:fixed;
+		}
+
+	/* 块级特性 */
+		.block{display: block;}
+		.none{display:none;}
+
+	/* 文本处理 */
+		.t_ellipsis{
+			overflow:hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		.t_center{
+			text-align:center;
+		}
+
+	/*辅助*/
+		.bd{border: 1px solid red;}
+		.red{background-color: red;}
+		.blue{background-color: skyblue;}
+		.green{background-color: green;}
+		.black{background-color: black;}
+		.pink{background-color: pink;}
+
+	/* v */
+

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+    <title>个人博客——相册</title>
+	<meta charset="utf-8">
+    <meta name="keywords" content="个人博客">
+    <meta name="description" content="神秘、俏皮。">
+
+      <link href="../include/css/reset.css"   rel="stylesheet">  <!--重置样式 -->
+      <link href="../include/css/public.css"   rel="stylesheet">  <!--公共样式 -->
+      <link href="../include/css/header.css"  rel="stylesheet">  <!--头部公用样式 -->
+      <link href="../include/css/index.css"  rel="stylesheet">  <!--首页样 -->
+
+      <link href="../include/css/album.css"  rel="stylesheet">  <!--我的相册样式 -->
+
+      <script src="../include/js/jquery-1.8.0.min.js"></script> <!--jq -->
+      <script src="../include/js/jquery.gallery.js"></script> <!--引人相册 翻页效果 -->
+
+</head>
+<body>
+
+<div id="ibody">
+    <!-- 头部导航 -->
+    <div id="header" class="rela">
+        <div class="title">
+            <h1>提拉米苏.甜腻的苦涩</h1>
+            <h2>我的手挽留不住你离去的脚步,
+                爱情是甜蜜的苦涩,无奈的别离
+                苦涩的怕不是味道,而是心绪
+            </h2>
+        </div>
+        <div class="logo abso">
+             <a href="#"></a>
+        </div>
+        <div class="topnav">
+            <a href="../index.html">首页</a>
+            <a href="aboutMe.html">关于我</a>
+            <a href="album.html" class="onred">我的相册</a>
+            <a href="comment.html">留言板</a>
+            <a href="../admin/login.html" target="_blank">后台管理(待隐藏)</a>
+        </div>
+    </div>
+
+    <!-- 左边相册 -->
+<div class="clearFix">
+    <div id="album">
+        <h2 class="about_h">您现在的位置是：
+              <a href="album.html">相册</a>&emsp;&gt;&emsp;
+              <span style="color:red;">第一个相册</span>
+        </h2>
+
+        <div class="photoShow">
+            <div class="ablumNew">
+                <p>相 片 集</p>
+            </div>
+
+            <!-- 最新照片展示 -->
+            <div class="container">
+                <div id="dg-container" class="dg-container">
+                  <div class="dg-wrapper">
+                      <a href="###">
+                          <img src="../include/albumImg/1.jpg" width="480px" height="260">
+                      </a>
+
+                      <a href="###">
+                          <img src="../include/albumImg/2.jpg" width="480px" height="260">
+                      </a>
+
+                      <a href="###">
+                          <img src="../include/albumImg/3.jpg" width="480px" height="260">
+                      </a>
+                      <a href="###">
+                          <img src="../include/albumImg/4.jpg" width="480px" height="260">
+                      </a>
+
+                      <a href="###">
+                          <img src="../include/albumImg/5.jpg" width="480px" height="260">
+                      </a>
+
+                      <a href="###">
+                          <img src="../include/albumImg/6.jpg" width="480px" height="260">
+                      </a>
+                      <a href="###">
+                          <img src="../include/albumImg/7.jpg" width="480px" height="260">
+                      </a>
+
+                      <a href="###">
+                          <img src="../include/albumImg/8.jpg" width="480px" height="260">
+                      </a>
+                  </div>
+
+                  <div class="firstOne">这是第 <span>1</span> 张照片</div>
+
+                  <nav class="onNext">
+                    <span class="dg-prev"> &lt;</span>
+                    <span class="dg-next"> &gt;</span>
+                  </nav>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="template1">
+            <div class="newComment">
+               <p>最 新 留 言</p>
+            </div>
+        </div>
+        <!-- 展示 留言 信息 账户信息 -->
+        <div class="template2">
+            <ul style="margin-bottom:20px;">
+                <li>
+                    <img src="../include/images/001.jpg">
+                 </li>
+                 <li>
+                     <span>帐号昵称</span>
+                     <time>留言时间</time>
+                 </li>
+                 <li>
+                     留言内容留言内容留言内容
+                 </li>
+            </ul>
+
+            <div class="hr"></div>
+
+            <ul style="margin-bottom:20px;">
+                  <li>
+                      <img src="../include/images/002.jpg">
+                  </li>
+                  <li>
+                      <span>${comment.user_account}</span>
+                      <time>${comment.critique_time}</time>
+                  </li>
+                  <li>
+                      ${comment.critique_content}
+                  </li>
+            </ul>
+        </div>
+        <!-- 结尾 -->
+        <div class="aa">
+             快乐的猿猴
+        </div>
+    </div>
+
+    <!-- 右边信息 -->
+    <div id="rightAlbum">
+        <ul class="rnav">
+            <li class="rnav1 ">
+                <a href="###">个人博客</a>
+            </li>
+            <li class="rnav2 ">
+                <a href="http://user.qzone.qq.com/657682618">QQ空间</a>
+            </li>
+            <li class="rnav3 ">
+                <a href="###">个人作品</a>
+            </li>
+            <li class="rnav4 ">
+                <a href="###">原创程序</a>
+            </li>
+        </ul>
+
+        <div class="zx_news">
+             <div class="new1">
+                <p>最新信息</p>
+                <ul>
+                    <li><a href="###">最新1号</a></li>
+                    <li><a href="###">最新2号</a></li>
+                    <li><a href="###">最新3号</a></li>
+                    <li><a href="###">最新4号</a></li>
+                </ul>
+             </div>
+
+             <div class="new2">
+                <p>推荐信息</p>
+                <ul>
+                    <li><a href="###">1111</a></li>
+                    <li><a href="###">1111</a></li>
+                    <li><a href="###">1111</a></li>
+                    <li><a href="###">1111</a></li>
+                </ul>
+             </div>
+        </div>
+
+        <div class="copyright">
+            <p> Design by <span>chao<span></p>
+        </div>
+    </div>
+</div>
+</div>
+
+    <!-- 控制翻页 -->
+    <script type="text/javascript">
+          var album = $("#album").height();  //获取右边笔记的 高度
+          $("#rightAlbum").css({minHeight:album});  //设置右边的最小高度
+          $(function() {$('#dg-container').gallery();});  //翻页显示
+
+          var text = $(".container .firstOne span"); //给第几张照片重新赋值
+          var index1 = $(".container .dg-wrapper a").index(); //得到共有几张照片
+          var num = 1;  //初始化第几张照片
+          var lastTime = new Date().getTime();  //最后一次的刷新时间
+          var delay = 500;  //延迟
+
+          /*切换数字减一*/
+          $(".container .dg-prev").click(function(){
+              var newTime1 = new Date().getTime();  //点击之后的时间
+              if((newTime1-lastTime) > delay){  //防止点击过快
+                  num--;
+                  if(num < 1){ num = index1 + 1;}
+                  text.text(num);
+                  lastTime = new Date().getTime();
+              }else{
+                  return;
+              }
+          })
+          /*切换数字加一*/
+          $(".container .dg-next").click(function(){
+                  var newTime = new Date().getTime();
+                  if((newTime-lastTime) > delay){
+                       num++;
+                       if(num > (index1 +1)){ num = 1;}
+                       text.text(num);
+                       lastTime = new Date().getTime();
+                  }else{
+                    return;
+                  }
+          })
+    </script>
+</body>
+</html>

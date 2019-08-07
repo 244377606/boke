@@ -1,0 +1,296 @@
+@charset "utf-8";
+
+/* 文章 内容 显示  左右浮动 */
+#ArticleContent{
+
+}
+/* 左边文章展示 */
+#ArticleContent .article{
+	float:left;
+	background: url(../images/ibodybg.png) 587px -156px no-repeat;
+	width:750px;
+}
+
+/* 轮播图 */
+#ArticleContent .banner {
+	background: url(../images/banner.jpg) no-repeat center;
+	height: 290px;
+	margin: 10px auto;
+	width: 100%;
+	font-size: 16px;
+	font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+}
+#ArticleContent .banner .texts {
+	line-height: 36px;
+	padding: 90px 0 0 40px;
+	text-shadow: 1px 1px rgba(255, 255, 255, 0.3);
+}
+#ArticleContent .banner .texts p {
+	transition: all 1s;
+	transform: translate(60px);
+}
+#ArticleContent .texts p:hover {
+	padding-left: 20px
+}
+
+/* 我的笔记展示 */
+#ArticleContent .bloglist h2 {
+	border-bottom:2px solid #474645 ;
+	margin: 0 8px 20px 8px;
+	overflow: hidden;
+}
+
+#ArticleContent .bloglist h2 p {
+	height: 26px; width: 180px;
+	font: 16px/28px '';
+	letter-spacing: 4px;
+	background: #474645;
+	color: #38b3d4;
+	text-align:center;
+	box-shadow:4px 5px 1px #999;
+}
+
+/* 笔记 内容 blogs 区域 */
+#ArticleContent .bloglist .blogs {
+	margin: 0 20px 40px 20px;
+	transition:all 1s;
+}
+/* 文章 标题   图片  */
+#ArticleContent .bloglist .blogs h3 {
+	font:bold italic 14px/16px '';
+	color: #000;
+	letter-spacing: 2px;
+	margin-bottom: 10px;
+}
+#ArticleContent .bloglist .blogs h3 a:hover {
+	text-decoration: underline;
+}
+#ArticleContent .bloglist .blogs .leftImg {
+	width: 25%;
+	overflow: hidden;
+}
+#ArticleContent .bloglist .blogs .leftImg img {
+	transition: all 0.5s;
+}
+#ArticleContent .bloglist .blogs .leftImg:hover img {
+	transform: scale(1.2);
+}
+
+/* 文章内容 */
+#ArticleContent .bloglist .blogs .rightContent {
+	float: right;
+	line-height: 20px;
+	width: 72%;
+	padding:0 10px;
+	color: #474645;
+}
+#ArticleContent .bloglist .rightContent .content{
+	height:140px;
+	overflow: hidden;
+}
+#ArticleContent .bloglist .rightContent .content p{
+	margin-bottom:10px;
+	text-indent:2em;
+	font:14px/26px "";
+	letter-spacing:1px;
+}
+#ArticleContent .readmore {
+	background: #e41635;
+	color: #fff;
+	padding: 5px 10px;
+	float: right;
+	margin: 14px 0 0 0
+}
+
+/* 作者信息栏 */
+#ArticleContent .autor {
+	display: inline-block;
+	margin: 10px 0 0 0;
+	line-height: 26px;
+	height: 26px;
+	color: #838383;
+	width: 100%;
+	background: #f6f6f6;
+}
+
+#ArticleContent .autor span > b{
+	color: #0f9c7c;
+}
+#ArticleContent .autor > a > b{
+	font-weight: bold;
+	color: red;
+}
+
+/* 时间线 */
+#ArticleContent .blogs::before {
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	background: #cac1c1;
+	border: 2px solid #fff;
+	left: -27px;
+	transition: all 1s;
+}
+#ArticleContent .blogs:hover::before {
+	background: #474645
+}
+
+#ArticleContent .dateview {
+	position: absolute;
+	right:746px; top: -10px;
+	border-radius:10px;
+	width:80px;
+	text-align:center;
+	padding:1px 8px;
+	background:rgba(0,0,0,0.7);
+	opacity:0;
+	color:#fff;
+	font-size:12px;
+	transition:all 1s;
+}
+#ArticleContent .blogs:hover .dateview{
+	transition:all 1s;
+	opacity:1;
+}
+
+/* 右边推荐文章 展示 */
+#ArticleContent .aside{
+	float:right;
+	width:267px;
+	background: url(../images/ibodybg.png) -170px -160px no-repeat #000;
+}
+/* 个人头像 */
+#ArticleContent .aside .avatar {
+	margin: 10px auto;
+	width: 160px;
+	height: 160px;
+	border-radius: 100%;
+	background: url(../images/chao.jpg) center/cover no-repeat;
+	overflow: hidden;
+}
+#ArticleContent .aside .avatar span {
+	display: block;
+	margin-top: 160px;
+	width: 160px;
+	height: 140px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	background: rgba(0, 0, 0, .5);
+	transition: all 0.2s;
+}
+#ArticleContent .aside .avatar:hover span {
+	margin-top: 100px;
+
+}
+/* 座右铭 */
+#ArticleContent .aside .topspaceinfo {
+	background: #e41635;
+	padding: 20px 20px;
+	color: #fff;
+	margin:20px 0;
+	text-shadow: 1px 1px rgba(0, 0, 0, .3);
+}
+#ArticleContent .aside .topspaceinfo h1 {
+	font:bold italic 18px/38px '';
+}
+
+/* 联系信息 */
+#ArticleContent .aside .about_c {
+	margin: 10px 0;
+	color: #fff;
+	line-height: 26px;
+	margin-bottom: 30px;
+}
+#ArticleContent .aside .about_c p {
+	display: block;
+	padding-left: 40px;
+}
+#ArticleContent .aside .about_c p:first-child,
+#ArticleContent .aside .about_c p:nth-child(2),
+#ArticleContent .aside .about_c p:nth-child(3),
+#ArticleContent .aside .about_c p:nth-child(4),
+#ArticleContent .aside .about_c p:last-child {
+	background: url(../images/about_c.png) no-repeat;
+}
+#ArticleContent .aside .about_c p:first-child {
+	background-position: 15px 6px;
+}
+#ArticleContent .aside .about_c p:nth-child(2) {
+	background-position: 15px -20px
+}
+#ArticleContent .aside .about_c p:nth-child(3) {
+	background-position: 15px -48px
+}
+#ArticleContent .aside .about_c p:nth-child(4) {
+	background-position: 15px -70px
+}
+#ArticleContent .aside .about_c p:last-child {
+	background-position: 15px -97px
+}
+
+/* 推荐信息 */
+#ArticleContent .aside .tj_t1,
+#ArticleContent .aside .tj_t2,
+#ArticleContent .aside .tj_t3 {
+	font-size: 16px;
+	color: #FFF;
+}
+#ArticleContent .aside .tj_t1 {
+	background: #0f9c7c
+}
+#ArticleContent .aside .tj_t2 {
+	background: #b0e516
+}
+#ArticleContent .aside .tj_t3 {
+	background: #c0a516
+}
+
+#ArticleContent .aside .tj_news h2 p,
+#ArticleContent .aside .tj_new h2 p,
+#ArticleContent .aside .links p {
+	height: 40px;
+	line-height: 40px;
+	width: 100px;
+	padding: 0 0 0 30px;
+	margin-top: 20px;
+	border-radius: 0 20px 20px 0;
+	text-shadow: 1px 1px rgba(0, 0, 0, .65) ;
+	color:#fff;
+}
+#ArticleContent .aside .tj_news ul{
+	margin:10px 0;
+}
+#ArticleContent .aside .tj_news ul li{
+	margin-top:4px;
+}
+#ArticleContent .aside .tj_news ul li a{
+	padding: 0 0 0 30px;
+	color:#bbbbbb;
+	font:16px/20px '';
+	transition:all .5s;
+}
+#ArticleContent .aside .tj_news ul li a:hover{
+	color:skyblue;
+	text-decoration:underline;
+}
+
+/* 有情连接 */
+#ArticleContent .aside .links a{
+	display:block;
+	width:90px;
+	margin:30px auto;
+	font:16px/20px '';
+	text-align: center;
+	color:#fff;
+}
+#ArticleContent .aside .links a:hover,
+#ArticleContent .aside .tj_news ul li p:hover{
+	color:skyblue;
+	text-decoration:underline;
+}
+
+/*首页结束*/
+

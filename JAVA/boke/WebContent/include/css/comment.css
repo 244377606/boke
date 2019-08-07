@@ -1,0 +1,300 @@
+@charset "utf-8";
+/* 我的相册 页面 的css */
+
+/* 左边 留言信息展示 */
+#comment{
+    background: url(../images/ibodybg.png) 587px -156px no-repeat;
+    float:left;
+    width:750px;
+}
+/* 所在位置 css */
+#comment .about_h {
+    font-size: 14px;
+    color: #666;
+    line-height: 30px;
+    border-bottom: #d7d7d7 1px solid;
+    background: url(../images/5849.png) 40px 5px no-repeat;
+    padding-left: 60px;
+    margin: 20px;
+}
+
+/* 最新留言 */
+#comment .template1 {
+    margin: 0 10px 10px 10px;
+}
+#comment .template1 .newComment{
+    border-bottom: #333 2px solid;
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    display: block;
+}
+#comment .template1 .newComment p{
+    width: 180px; height: 25px;
+    font:italic 16px/25px '';
+    color: #38b3d4;
+    text-align: center;
+    background: #474645;
+    box-shadow:4px 5px 1px #999 ;
+}
+
+/* 最新 留言 样式 */
+#comment .template {
+    width: 700px;
+    min-height:400px;
+    padding: 10px 0 0 40px;
+}
+
+#comment .template > ul {
+	max-height:180px;
+	min-height:100px;
+	overflow:hidden;
+	margin-bottom:10px;
+	padding:2px 0 0 2px;
+}
+
+#comment .template > ul > li:nth-child(1),
+#comment .template > ul > li:nth-child(2){
+    text-indent:0px;
+    display:inline-block;
+    height: 40px;
+    vertical-align:middle;
+    margin-left:0px;
+    font:12px/40px "";
+}
+
+#comment .template > ul > li:nth-child(1){
+    width: 40px;
+    border-radius:50%;
+    box-shadow: 0px 0px 6px blue;
+    position:relative;
+}
+#comment .template > ul > li > img{
+    width: 38px;height: 38px;
+    padding:1px;
+    border-radius:50%;
+    cursor:wait;
+    transition: all 1s;
+}
+
+/* 隐藏头像大图信息 */
+#comment .template > ul > li .hiddenInfo{
+	position:absolute;
+	display:none; 
+	top:0px;left:40px;
+	width:100px;
+	background:#fff;
+	box-shadow:0px 0px 10px rgba(0,0,0,.5);
+	border-radius:10px;
+	overflow:hidden;
+}
+#comment .template > ul > li:hover .hiddenInfo{
+   display:block;
+}
+
+
+
+#comment .template > ul > li > img:hover{
+    transform:rotate(360deg);
+}
+#comment .template > ul > li span{
+    color:blue;
+    font:bold 16px/40px "";
+    margin:0px 12px 0 10px;
+}
+
+#comment .template > ul li b{
+    margin-left:14px;
+    font:bold italic 14px/24px "";
+    color:red;
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+#comment .template > ul li pre{
+    letter-spacing:2px;
+    margin-left:40px;
+    font:16px/24px "";
+    color:rgba(0,0,0,0.6);
+}
+
+
+
+/* 分割线 */
+#comment .template .hr{
+    width: 100%;
+    margin:10px 0  20px 10px;
+    border-bottom: 1px dashed #000;
+}
+
+/* 留言足迹 */
+#comment .suiBian{
+    padding-bottom:40px;
+}
+
+#comment .suiBian > p{
+    display:block;
+    margin:10px;
+    font:bold 16px/20px "ËÎÌå";
+}
+
+#comment .suiBian form {
+    margin:10px;
+
+}
+#comment .suiBian form textarea{
+	letter-spacing: 2px;
+	color:rgba(0,0,0,0.6);
+    display:inline-block;
+    vertical-align:bottom;
+    font:16px/24px "";
+    height:160px; width:460px;
+    padding:10px;
+    margin-left: 30px;
+    resize:none;
+    outline:none;
+}
+
+#comment .suiBian form .button{
+    display:inline-block;
+    width:60px;height: 30px;
+    border-radius:20%;
+    font: bold 18px/30px "";
+    cursor:pointer;
+    margin-left:10px;
+    text-align: center;
+    outline:none;
+}
+
+/* 最新相册展示 */
+#comment .ablumNew{
+    width: 98%;
+    border-bottom: #333 2px solid;
+    margin:0 10px;
+    overflow: hidden;
+}
+#comment .ablumNew p{
+    width: 180px; height: 25px;
+    font:italic 16px/25px '';
+    color: #38b3d4;
+    text-align: center;
+    background: #474645;
+    box-shadow:4px 5px 1px #999 ;
+}
+
+/* 最新照片展示 */
+#comment .photo{
+    width:600px;height:400px;
+    margin:30px auto;
+    overflow: hidden;
+    box-shadow: -2px 3px 10px black;
+}
+#comment .photo > ul{
+    width:5000px;height:400px;
+    margin-left:0px;
+    background:#eee;
+}
+#comment .photo > ul li img{
+    margin:10px;
+    width:580px;height:380px;
+}
+
+/* fooder */
+#comment .aa{
+    margin:30px auto;
+    font: bold italic 22px/30px '';
+    text-align: center;
+    background:rgba(0,0,0,0.6);
+    color:rgba(255,255,255,0.7);
+}
+
+/* 右边区域 */
+#rightComment{
+    float:right;
+    width:267px;
+    background: url(../images/ibodybg.png) -170px -160px no-repeat #000;
+}
+#rightComment .rnav {
+    width: 120px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+#rightComment .rnav li {
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 2px;
+    height: 40px;
+    line-height: 40px
+}
+#rightComment .rnav li a {
+    color: #FFF;
+    display: block;
+    transition: all 1s
+ }
+#rightComment .rnav1 { background: #e41637 }
+#rightComment .rnav2 { background: #f16b17 }
+#rightComment .rnav3 { background: #0f9c7c }
+#rightComment .rnav4 { background: #46ce14 }
+#rightComment .rnav li a:hover {
+    background: rgba(255,255,255,0.4);
+    transform: rotate(360deg);
+}
+
+/* 信息推荐 */
+#rightComment .zx_news{
+    margin-top: 50px;
+    padding-bottom: 20px;
+    border-bottom:3px dashed pink;
+}
+#rightComment .zx_news .new1 p{
+    background: #0f9c7c;
+}
+#rightComment .zx_news .new2 p{
+    background: #b0e516;
+    margin-top: 20px;
+}
+#rightComment .zx_news .new1 p,
+#rightComment .zx_news .new2 p{
+    font: 20px/40px '';
+    letter-spacing: 3px;
+    color: #FFF;
+    height: 40px;
+    width: 120px;
+    padding: 0 0 0 30px;
+    border-radius: 0 20px 20px 0;
+    text-shadow: 1px 1px rgba(0, 0, 0, .65) ;
+}
+#rightComment .zx_news ul{
+    padding:10px 0  0 50px;
+}
+#rightComment .zx_news ul li {
+    display: block;
+    font:16px/20px '';
+    margin-top:10px;
+    color:rgba(255,255,255,0.8);
+    overflow: hidden;
+}
+#rightComment .zx_news ul li a:hover{
+    color:skyblue;
+    text-decoration:underline;
+}
+
+/* 版权注释 */
+#rightComment .copyright{
+    color:#fff;
+    width:120px;
+    padding:10px;
+    background:rgba(255,255,255,0.6);
+    border-radius: 50%;
+    text-align: center;
+    font: bold 18px/26px '' ;
+    margin: 30px auto ;
+}
+#rightComment .copyright span{
+    color:skyblue;
+}
+
+
+
+

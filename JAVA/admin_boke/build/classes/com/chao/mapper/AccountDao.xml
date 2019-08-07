@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.chao.mapper.AccountDao">
+	
+	<!-- 判断是否可以成功登录 -->
+	<select id="selectAdminByName" parameterType="Admin" resultType="Admin">
+		select * from admin
+		where adminName = #{adminName}
+		and adminPassword = #{adminPassword}
+	</select>
+	
+	<!-- 查询管理员帐号信息 -->
+	<select id="selectAdminAccount" parameterType="PageData" resultType="Admin">
+		select * from admin
+		<where>
+			<if test="username !=null and username != ''">
+				and adminName like "%"#{username}"%"
+			</if>
+		</where>
+		limit #{startPage},#{limit}
+	</select>
+	
+	<!-- 查询管理员账户 总数 -->
+	<select id="selectAdminAccountCount" parameterType="PageData" resultType="Integer">
+		select count(1) from admin
+		<where>
+			<if test="username !=null and username != ''">
+				and adminName like "%"#{username}"%"
+			</if>
+		</where>
+	</select>
+	
+	
+	<!-- 查询普通帐号信息 -->
+	<select id="selectUserAccount" parameterType="PageData" resultType="User">
+		select * from userInfo
+		<where>
+			<if test="username != null and username != ''">
+				and u_account like "%"#{username}"%"
+			</if>
+			<if test="sex != null and sex != ''">
+				and u_sex = #{sex}
+			</if>
+		</where>
+		limit #{startPage},#{limit}
+	</select>
+	
+	<!-- 查询普通 账户 总数 -->
+	<select id="selectUserAccountCount" parameterType="PageData" resultType="Integer">
+		select count(1) from userInfo
+		<where>
+			<if test="username != null and username != ''">
+				and u_account like "%"#{username}"%"
+			</if>
+			<if test="sex != null and sex != ''">
+				and u_sex = #{sex}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 根据账户id 删除 该帐号 -->
+	<delete id="deleteUserById" parameterType="Integer">
+		delete from userInfo
+		where u_id = #{id}
+	</delete>
+	
+	<!-- 根据账户id 批量删除 该帐号 -->
+	<delete id="deleteUserByIds" parameterType="Integer[]">
+		delete from userInfo where
+		<foreach collection="array" item="ids" separator="," open="u_id in(" close=")">
+			#{ids}
+		</foreach>
+	</delete>	
+	
+</mapper>

@@ -1,0 +1,340 @@
+@charset "utf-8";
+/* 关于我 页面 的css */
+
+/* 座右铭 */
+#aboutMe{
+    background: url(../images/ibodybg.png) 587px -156px no-repeat;
+    float:left;
+    width:750px;
+}
+
+#aboutMe .about_h {
+    font-size: 14px;
+    color: #666;
+    line-height: 30px;
+    height: 30px;
+    border-bottom: #d7d7d7 1px solid;
+    padding-left: 60px;
+    margin: 20px;
+    background: url(../images/5849.png) 40px 5px no-repeat;
+}
+
+#aboutMe .about {
+    line-height: 22px;
+    margin: 20px;
+}
+
+#aboutMe .about h2 {
+    font-size: 22px;
+    font-family: cursive;
+    margin-bottom: 20px;
+    color: #f16b17
+}
+
+#aboutMe .about p {
+    margin-bottom: 15px
+}
+
+#aboutMe .about ul {
+    color: #333
+}
+
+#aboutMe a.blog_link {
+    color: #0f9c7c;
+    margin: 0 20px
+}
+
+/* 右边区域 */
+#rightAside{
+    float:right;
+    width:267px;height:100%;
+    background: url(../images/ibodybg.png) -170px -160px no-repeat #000;
+}
+#rightAside .avatar {
+    margin: 10px auto;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#rightAside .avatar img {
+    display: block;
+}
+
+/* 思 */
+#rightAside .topspaceinfo {
+    background: #e41635;
+    padding: 30px 20px;
+    margin:20px 0;
+    color: #fff;
+    text-shadow: 1px 1px rgba(0, 0, 0, .3);
+}
+#rightAside .topspaceinfo h1 {
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+
+/* 联系信息 */
+#rightAside .about_c {
+    margin: 20px 0;
+    color: #fff;
+    font:16px/28px '';
+    line-height: 26px;
+}
+#rightAside .about_c p {
+    display: block;
+    margin:5px;
+    color:rgba(255,255,255,.8);
+    padding-left: 24px;
+}
+#rightAside .about_c p span {
+    margin-left:12px;
+    letter-spacing:2px;
+    color:#fff;
+}
+#rightAside .about_c p span a{
+    font:bold 16px/28px '';
+    text-decoration:underline;
+    color:skyblue;
+}
+
+/* 推荐信息 */
+#rightAside .tj_t1,
+#rightAside .tj_t2,
+#rightAside .tj_t3 {
+    font: bold 16px/20px '';
+    color: #FFF;
+}
+#rightAside .tj_t1 {
+    background: #7275fc;
+}
+#rightAside .tj_t2 {
+    background: #0f9c7c;
+}
+#rightAside .tj_t3 {
+    background: #804040;
+}
+
+#rightAside .tj_news h2 p,
+#rightAside .tj_new h2 p,
+#rightAside .links p {
+    display:block;
+    height: 40px;
+    line-height: 40px;
+    width: 100px;
+    padding: 0 0 0px 30px;
+    border-radius: 0 20px 20px 0;
+    text-shadow: 1px 1px rgba(0, 0, 0, .65) ;
+    color:#fff;
+}
+#rightAside .tj_news ul{
+    margin:20px 0;
+}
+#rightAside .tj_news ul li{
+    margin-top:4px;
+    padding-left:40px;
+    width:210px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    position:relative;
+}
+#rightAside .tj_news ul li:before{
+   content:"";
+   position:absolute;
+   top:2px;left:16px;
+   width:20px;height:20px;
+   background:url(../images/face.png) no-repeat -24px -168px;
+ 
+
+}
+#rightAside .tj_news ul li:hover:before{
+   background:url(../images/face.png) no-repeat 0px -168px;
+}
+#rightAside .tj_news ul li a{
+    color:#bbbbbb;
+    font:16px/20px '';
+    transition:all .5s;
+
+}
+#rightAside .tj_news ul li a:hover{
+    color:skyblue;
+    text-decoration:underline;
+}
+
+
+/* 分享 到qq 微信 等 */
+#rightAside .links{
+    color:#fff;
+    font:bold 20px/22px '';
+}
+#rightAside .links .fenXiang{
+   margin:20px;
+}
+
+
+#rightAside .links a {
+    display: inline-block;
+    width: 32px;height: 32px;
+    background: url(../images/icons_1_32.png?v=83ba0265.png) no-repeat;
+    cursor: pointer;
+    margin:8px;
+    overflow: hidden;
+}
+#rightAside .links a:nth-child(1){
+    background-position: 0 -52px;
+}
+#rightAside .links a:nth-child(2) {
+    background-position: 0 -104px;
+}
+#rightAside .links a:nth-child(3) {
+    background-position: 0 -260px;
+}
+#rightAside .links a:nth-child(4) {
+    background-position: 0 -1612px;
+}
+#rightAside .links a:hover{
+    color: #333; opacity: .6;
+}
+
+/* 我的BUG页面 */
+/* 搜索条件 */
+#aboutMe .about .search{
+	margin:0 auto;
+	width:350px;
+}
+#aboutMe .about .search p{
+	font:bold italic 18px/18px '';
+	margin-bottom: 8px;
+	color:rgba(0,0,0,.6);
+	padding-left:10px;
+}
+#aboutMe .about .search .textInput{
+	height:35px;width:260px;
+	text-indent:20px;
+	font:16px/35px '';
+	vertical-align:top;
+	outline:none;
+}
+#aboutMe .about .search .btnSearch{
+	height:39px;width:65px;
+	margin-left:10px;
+	cursor:pointer;
+	outline:none;
+}
+#aboutMe .noData{
+	width:200px;
+	margin:50px auto;
+	font:18px/20px '';
+	color:red;
+}
+
+#aboutMe .about .aboutBug{
+    margin:0 0 30px 10px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed rgba(0,0,0,.4);
+}
+#aboutMe .about .aboutBug li{
+    margin-top:18px;
+    padding-left:20px;
+    font:16px/26px '';
+    letter-spacing:2px;
+}
+#aboutMe .about .aboutBug li span{
+	display:inline-block;
+	vertical-align:top;
+    font:bold italic 18px/26px '宋体';
+}
+#aboutMe .about .aboutBug li > div{
+	display:inline-block;
+	width:570px;
+	word-break: break-all; 
+}
+
+/* 我的简历页面 */
+/* 头部信息 */
+#aboutMe .about .outResume{
+    width:100%;
+	margin-bottom:20px;
+    border:1px dashed rgba(0,0,0,.5);
+}
+#aboutMe .about .outResume .top{
+    background:rgba(0,0,0,.1);
+}
+#aboutMe .about .outResume .top img{
+    width:130px;height:150px;
+    margin:20px;
+    display: inline-block;
+}
+#aboutMe .about .outResume .top .right{
+    display: inline-block;
+    margin: 70px 0 0 30px;
+}
+#aboutMe .about .outResume .top .right p{
+    font:bold 24px/30px '';
+}
+#aboutMe .about .outResume .top .right span{
+    font:22px/30px '';
+}
+
+/* 信息简介 */
+#aboutMe .content .infoTop{
+	border-bottom:1px solid rgba(0,0,0,.4);
+	padding-bottom:15px;
+}
+#aboutMe .content .infoTop > div{
+	display:inline-block;
+    padding:20px 0 0 20px;
+    height:170px;
+    margin-top: 10px;
+	vertical-align:top;
+}
+#aboutMe .content .infoTop .a1{
+	width:260px;
+	border-right:1px solid rgba(0,0,0,.4);
+}
+#aboutMe .content .infoTop .a2{
+	width:180px;
+	border-right:1px solid rgba(0,0,0,.4);
+}
+#aboutMe .content .infoTop .a3{
+	width:160px;
+}
+#aboutMe .content .title{
+    font:bold 18px/20px '';
+    color:#5B91AD;
+    margin-bottom: 10px;
+}
+#aboutMe .content .infoTop > div > p{
+    margin-bottom: 5px;
+}
+#aboutMe .content .infoTop > div > p span{
+    font:16px/18px '';
+    color:#5B91AD;
+	text-align:right;
+}
+
+#aboutMe .content .xiaoYuan,
+#aboutMe .content .jingYan,
+#aboutMe .content .critique{
+	height:160px;
+	padding:20px 20px;
+	border-top:1px solid rgba(0,0,0,.4);
+}
+/* 校园经历 */
+#aboutMe .content .xiaoYuan{
+	border-top:0px solid rgba(0,0,0,.4);
+}
+
+/* 项目经验 */
+#aboutMe .content .jingYan{
+	
+
+}
+/* 个人评价 */
+#aboutMe .content .critique{
+
+
+}

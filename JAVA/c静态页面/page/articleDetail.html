@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>个人博客-详细内容具体的一篇文章</title>
+		<meta name="keywords" content="个人博客">
+		<meta name="description" content="神秘、俏皮。">
+
+        <link href="../include/css/reset.css"   rel="stylesheet">  <!--重置样式 -->
+        <link href="../include/css/public.css"   rel="stylesheet">  <!--公共样式 -->
+        <link rel="stylesheet" href="../include/iconfont/iconfont.css">   <!--阿里图标css -->
+
+        <link href="../include/css/header.css"  rel="stylesheet">  <!--头部公用样式 -->
+        <link href="../include/css/article.css"  rel="stylesheet">  <!--首页样 -->
+
+        <script src="../include/js/jquery-1.8.0.min.js"></script> <!--jq -->
+  </head>
+<body>
+<div id="ibody">
+
+    <!-- 头部导航 -->
+    <div id="header" class="rela">
+        <div class="title">
+            <h1>星之轨迹.梦中的灵魂</h1>
+            <h2>
+               &emsp;追随流星的脚步,寻求不止息的梦想====学会做一个有心人,去做一件有心事
+            </h2>
+        </div>
+        <div class="logo abso">
+             <a href="#"></a>
+        </div>
+
+        <div class="topnav">
+            <a href="../index.html" class="onred">首页</a>
+            <a href="aboutMe.html">关于我</a>
+            <a href="album.html">我的相册</a>
+            <a href="comment.html">留言板</a>
+            <a href="../admin/login.html" target="_blank">后台管理(待隐藏)</a>
+        </div>
+    </div>
+
+<!-- 左边区域 -->
+<div class="clearFix">
+    <div id="ArticleContent">
+        <h2 class="about_h">您现在的位置是：
+            <a href="../index.html">首页</a>&emsp;&gt;&emsp;
+            <span style="color:red;">详细内容</span>
+        </h2>
+        <div class="index_about">
+            <h2 class="c_titile">这是笔记标题</h2>
+            <p class="box_c">
+               <span class="d_time">发布时间：2019-3-24</span>
+               <span>作者：chao </span>
+               <span>浏览(999) </span>
+               <a href="articleCritique.html">
+               	 <span style="color:red;">评论(99)</span>
+               </a>
+            </p>
+            <div class="infos">
+                <p>${selectById.getContent()}</p>
+                <p>内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+                <p>${selectById.getContent()}</p>
+                <p>${selectById.getContent()}</p>
+                <p>${selectById.getContent()}</p>
+                <p>${selectById.getContent()}</p>
+                <p>${selectById.getContent()}</p>
+                <p> 内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                     内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                     内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                     内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                     内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                    内容内容内容内容内容内容内
+                </p>
+            </div>
+            <div class="keybq">
+            <p><span>关键字词</span>：${selectById.getKeywords() }</p>
+            </div>
+            <div class="nextinfo">
+                <c:if test="${ articleBefore!=null}">
+                    <p>上一篇：<a href="###}">${articleBefore.title}</a></p>
+                </c:if>
+                <c:if test="${ articleAfter!=null}">
+                    <p>下一篇：<a href="###">${articleAfter.title}</a></p>
+                </c:if>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右边 推荐文章 展示 -->
+    <div id="rightLink">
+        <!-- 个人头像 -->
+        <a href="aboutMe.html">
+            <div class="avatar">
+                <span>关 于 chao</span>
+            </div>
+        </a>
+
+        <div class="topspaceinfo">
+            <h1>随遇而安，安而随遇</h1>
+            <p>于千万人之中,</p>
+            <p>我遇见了我所遇见的人....</p>
+        </div>
+        <div class="about_c">
+            <p>网名：星痕丶夜中魂</p>
+            <p>职业：一只程序猿</p>
+            <p>籍贯：河北-廊坊</p>
+            <p>QQ：244377606</p>
+            <p>邮箱：244377606@qq.com</p>
+        </div>
+
+        <div class="tj_news">
+            <h2>
+                <p class="tj_t1">最新笔记</p>
+            </h2>
+           <!--  最新笔记 -->
+            <ul>
+              <li>
+                  <a href="###">
+                      <p> ${newArticle.getTitle()}</p>
+                      <p> ${newArticle.getTitle()}</p>
+                      <p> ${newArticle.getTitle()}</p>
+                      <p> ${newArticle.getTitle()}</p>
+                      <p> ${newArticle.getTitle()}</p>
+                  </a>
+              </li>
+            </ul>
+
+            <!-- 推荐笔记 -->
+            <h2>
+              <p class="tj_t2">推荐笔记</p>
+            </h2>
+
+            <ul>
+              <li><a href="###">
+                      <p> ${hot.getTitle()}</p>
+                      <p> ${hot.getTitle()}</p>
+                      <p> ${hot.getTitle()}</p>
+                      <p> ${hot.getTitle()}</p>
+                      <p> ${hot.getTitle()}</p>
+                  </a>
+              </li>
+            </ul>
+
+        </div>
+        <div class="links">
+            <p class="tj_t3">有情连接</p>
+            <a href="http://user.qzone.qq.com/3535305171">QQ 空 间</a>
+        </div>
+        <div class="copyright">
+            Design by  超
+        </div>
+    </div>
+</div>
+</div>
+
+    <script type="text/javascript">
+        var articleH = $(".article").height();  //获取右边笔记的 高度
+        $(".aside").css({minHeight:articleH});  //设置右边的最小高度
+    </script>
+</body>
+</html>
+
+</body>
+</html>

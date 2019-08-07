@@ -1,0 +1,61 @@
+@charset "utf-8";
+#ibody{
+	width:1024px;
+	background:#FFF;
+	margin:0 auto;
+	box-shadow: -2px -1px 5px #666;
+}
+/* 头部 导航 */
+#header{
+	background:url(../images/ibodybg.png) 587px 0px no-repeat;
+}
+#header .title{
+	padding:30px 80px 10px 80px;
+}
+#header .title h1{
+	padding-bottom: 18px;
+	font-size:20px;
+}
+#header .title h2{
+	font: italic 14px/20px '';
+	color:#8e8d8d;
+}
+#header .topnav{
+	width:100%;
+	color:#fff;
+	background: rgba(0, 0, 0, 0.8);
+}
+#header .topnav a{
+	display:inline-block;
+	height:50px;
+	font:18px/50px '';
+	padding:0 18px;
+	margin-left:4px;
+	transition:all .5s;
+}
+#header .topnav a:nth-child(1){
+	margin-left: 80px;
+}
+/* 鼠标 导航 颜色 样色 */
+#header .topnav a:hover{
+	background-color:#e41635;
+}
+.onred{
+	background-color:#e41635;
+}
+
+/* 左边 logo */
+.logo{
+	transition: all 0.6s;
+	background: url(../images/logo.png) no-repeat #000 center;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    position: absolute;
+    left: -72px;
+    top: 40px;
+    box-shadow: 0px 2px 2px #414141;
+}
+.logo:hover{
+	background: url(../images/home.png) no-repeat #000 center;
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.chao.mapper.AlbumDao">
+	
+	<!-- 扉页 查询所有的相册 -->
+	<select id="selectAlbum" parameterType="PageData" resultType="Album">
+		select * from album
+		limit #{startPage},#{limit}
+	</select>
+	
+	<!-- 查询所有相册 名称 -->
+	<select id="selectAlbumByName" resultType="Album">
+		select * from album
+	</select>
+	
+	<!-- 查询 相册数量 -->
+	<select id="selectAlbumCount" parameterType="PageData" resultType="Integer">
+		select count(1) from album
+	</select>
+	
+	<!-- 通过id 查询 相册 -->
+	<select id="selectAlbumById" parameterType="Integer" resultType="Album">
+		select * from album
+		where albumId = #{id}
+	</select>
+	
+	<!-- 修改相册信息 -->
+	<update id="updateAlbumById" parameterType="Album">
+		update album set
+			<if test="albumTitle != null and albumTitle != ''">
+				albumTitle = #{albumTitle},
+			</if>
+			<if test="albumImg != null and albumImg != ''">
+				albumImg = #{albumImg},
+			</if>
+			<if test="albumType != null and albumType != ''">
+				albumType = #{albumType},
+			</if>
+			<if test="albumDescribe != null and albumDescribe != ''">
+				albumDescribe = #{albumDescribe}
+			</if>
+		where albumId = #{albumId}
+	</update>
+	
+	<!-- 根据相册 新增照片 -->
+	<insert id="insertPhotoById" parameterType="Album">
+		insert into photo(albumId,albumName,photoTime,photoImg)
+		values(#{albumId},#{albumTitle},#{albumTime},#{albumImg})
+	</insert>
+	
+	<!-- 删除相册 -->
+	<delete id="deleteAlbumById" parameterType="Integer">
+		delete from album
+		where albumId = #{id}
+	</delete>
+	
+	<!-- 查询 相册下的所有本地照片 -->
+	<select id="selectPhotoByAlbumId" parameterType="Integer" resultType="Photo">
+		select * from photo
+		where albumId = #{id}
+	</select>
+	
+	<!-- 删除数据库照片 -->
+	<delete id="deletePhotoByAlbumId" parameterType="Integer">
+		delete from photo
+		where albumId = #{id}
+	</delete>
+	
+	<!-- 新增相册 -->
+	<insert id="insertAlbumInfo" useGeneratedKeys="true" keyProperty="albumId" parameterType="Album">
+		insert into album(albumTitle,albumImg,albumType,albumTime,albumDescribe)
+		values(#{albumTitle},#{albumImg},#{albumType},#{albumTime},#{albumDescribe})
+	</insert>
+	
+	<!-- 查询所有照片 -->
+	<select id="selectPhoto" parameterType="PageData" resultType="Photo">
+		select * from photo
+		<where>
+			<if test="albumName != null and albumName != ''">
+				and albumName = #{albumName}
+			</if>
+		</where>
+		limit #{startPage},#{limit}
+	</select>
+	
+	<!-- 查询照片总数 -->
+	<select id="selectPhotoCount" parameterType="PageData" resultType="Integer">
+		select count(1) from photo
+	</select>
+	
+	<!-- 更新相册封面 -->
+	<update id="updateAlbumImg" parameterType="Photo">
+		update album set
+		albumImg = #{photoImg}
+		where albumId = #{albumId}
+	</update>
+	
+	<!-- 删除照片 -->
+	<delete id="deletePhotoById" parameterType="Integer">
+		delete from photo
+		where photoId = #{id}
+	</delete>
+		
+</mapper>

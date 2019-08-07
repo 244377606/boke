@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.chao.mapper.ArticleDao">
+
+	<!-- 查询文章的总条数 -->
+	<select id="selectArticleCount" resultType="Integer">
+		select count(1) from article   
+	</select>
+	
+	<!-- 查询文章数据 -->
+	<select id="selectArticle" parameterType="QueryVo" resultType="Article">
+		select * from article
+		limit #{startPage},#{size}
+	</select>
+	
+	<!-- 最新文章查询 -->
+	<select id="selectNewArticle" resultType="Article">
+		select * from article
+		order by articleTime desc 
+		limit 0,5 
+	</select>
+	
+	<!-- 查询最热文章 -->
+	<select id="selectHotArticle" resultType="Article">
+		select * from article
+		order by pageView desc 
+		limit 0,5 
+	</select>
+	
+	<!-- 查询具体 某篇文章的 详细信息 -->
+	<select id="selectArticleById" parameterType="QueryVo" resultType="Article">
+		select * from article
+		where articleId = #{articleId}
+	</select>
+	
+	<!-- 实现浏览量加1 -->
+	<update id="updetePageView" parameterType="QueryVo">
+		update article set pageView = pageView + 1 
+		where  articleId = #{articleId}
+		
+	</update>
+	
+	
+	<!-- 查询上一篇文章具体信息 -->
+	<select id="selectArticleBefore" parameterType="QueryVo" resultType="Article">
+		select * from article
+		where articleId &lt; #{articleId}
+		order by articleId desc
+		limit 0,1
+	</select>
+	
+	<!-- 查询下一篇文章 详细信息 -->
+	<select id="selectArticleAfter" parameterType="QueryVo" resultType="Article">
+	 	select * from article
+		where articleId &gt; #{articleId}
+		limit 0,1
+	</select>
+	
+	<!-- 根据文章id 查询账户评论信息 -->
+	<select id="selectCritiqueById" parameterType="QueryVo" resultType="Critique">
+	 	select * from critique
+		where article_id = #{articleId}
+		order by critique_time desc
+		limit 0,3
+	</select>
+	
+	<!-- 查询评论 的 总条数 -->
+	<select id="selectCritiqueCount" parameterType="QueryVo" resultType="Integer">
+		select count(1) from critique
+		where article_id = #{articleId}
+	</select>
+	
+	<!-- 某篇文章的全部评论 -->
+	<select id="selectCritiqueAll" parameterType="QueryVo" resultType="Critique">
+	 	select * from critique
+		where article_id = #{articleId}
+		order by critique_time desc
+		limit #{startPage},#{size}
+	</select>
+	
+	<!-- 判断用户是否登录 -->
+	<select id="selectUserLogin" parameterType="User" resultType="User">
+		select * from userInfo
+		where u_account = #{u_account}
+		and u_password  = #{u_password}
+	</select>
+	
+	<!-- 新增评论 -->
+	<insert id="insertArticleCritique" parameterType="QueryVo">
+		insert into critique(article_id,user_id,user_account,user_img,critique_time,critique_content)
+		values(#{articleId},#{user_id},#{user_account},#{user_img},#{critique_time},#{critique_content})
+	</insert>
+	
+	<!-- 文章评论量加1 -->
+	<update id="updateArticleCritiques" parameterType="QueryVo">
+		update article set critiques = #{critiques}
+		where articleId = #{articleId}
+	</update>
+
+	<!-- 删除评论 -->
+	<delete id="deleteCritiqueByid" parameterType="Critique">
+		delete from critique
+		where critique_id = #{critique_id}
+	</delete>
+	
+
+	<!-- 判断用户名是否存在 -->
+	<select id="selectAccountIsExist" parameterType="User" resultType="User">
+		select * from userInfo
+		where u_account = #{u_account}
+	</select>
+	
+	<!-- 新增账户 -->
+	<insert id="insertUserInfo" parameterType="QueryVo">
+		insert into userInfo(u_account,u_password,u_sex,u_img,u_time)
+		values(#{user_account},#{user_password},#{user_sex},#{user_img},#{user_time})
+	</insert>
+	
+	
+</mapper>

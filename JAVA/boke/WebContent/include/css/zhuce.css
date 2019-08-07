@@ -1,0 +1,280 @@
+@charset "utf-8";
+/*头*/
+
+    #mainLogin{
+   		top:50%;left:50%;
+        margin-left: -290px;
+        margin-top: -260px;
+		display:none;
+		width:350px;
+        border-radius: 14px;
+        box-shadow: -1px 2px 20px rgba(0,0,0,0.6);
+		background:#f5f5f5;
+    }
+    #mainLogin .topA{
+		margin-left:58px;
+		padding-top:30px;
+        border-radius: 14px 14px 0 0;
+
+    }
+    #mainLogin .topA .dengluOn{
+        color:#0f9c7c;
+        border-bottom:2px solid #0f9c7c;
+    }
+   #mainLogin .topA span{
+        color:rgba(0,0,0,0.5);
+        cursor:pointer;
+        display:inline-block;
+        text-align: center;
+        padding:4px 0;
+         border-bottom:2px solid #f5f5f5;
+        letter-spacing: 10px;
+        text-indent:10px;
+        font:bold 20px/24px "";
+        transition: all .5s;
+    }
+    #mainLogin .topA span:hover{
+        color:#0f9c7c;
+        border-bottom:2px solid #0f9c7c;
+    }
+    #mainLogin .topA i{
+        font:bold 20px/24px "";
+        color:rgba(0,0,0,0.5);
+		margin:40px;
+    }
+
+/*登录css*/
+    #mainLogin .leftLogin{
+        width:300px;height:400px;
+        padding-top: 20px;
+    }
+    #mainLogin .leftLogin .accountInput{
+        margin-bottom: 28px;
+    }
+        #mainLogin .leftLogin .padInput{
+        margin-bottom: 0px;
+    }
+
+    #mainLogin .leftLogin > form{
+        margin:50px 0px 0 45px;
+    }
+    #mainLogin .leftLogin > form span{
+    	display:inline-block;
+    	color:rgba(0,0,0,0.5);
+        font:bold 18px/30px "";
+        text-align: center;
+        height:30px;
+        vertical-align: middle;
+        padding:4px 10px 4px 16px;
+    }
+    #mainLogin .leftLogin > form input{
+        height:34px;
+        text-indent: 14px;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+
+    /* 登录按钮 */
+    #mainLogin .leftLogin .btnLogin{
+        width:160px;
+        margin:0px auto;
+    }
+    #mainLogin .leftLogin .btnLogin .submit{
+         display:inline-block;
+         width:160px; height:40px;
+         font:bold 18px/40px "";
+         text-align: center;
+         background-color:rgba(0,0,0,.2);
+         color: rgba(0,0,0,.6);
+         outline: none;
+         border-radius: 18px;
+         cursor: pointer;
+         border:0;
+         text-indent: 0px;
+    }
+    #mainLogin .leftLogin .btnLogin .quxiao{
+        margin-top: 30px;
+    }
+/*注册css*/
+	#mainLogin .right_zhuce{
+		width:350px;height:425px;
+		padding-top: 20px;
+		display: none;
+	}
+
+	#mainLogin .right_zhuce > form span{
+		display:inline-block;
+		width:80px;height:30px;
+		margin:0 10px;
+		font:bold  16px/30px "";
+		color:rgba(0,0,0,0.5);
+		text-align: right;
+	}
+	#mainLogin .right_zhuce > form input{
+		height:30px;width:220px;
+		font-size:14px;
+        outline: none;
+		text-indent: 20px;
+		border:none;
+	}
+	 #mainLogin .right_zhuce > form  div{
+		margin:14px  0px;
+	 }
+	 #mainLogin .right_zhuce > form .sex > input{
+		width:20px;height:20px;
+		margin:0 10px;
+		vertical-align: middle;
+	 }
+	 #mainLogin .right_zhuce > form i{
+		color:green;
+		font-weight:bold;
+	}
+
+	#mainLogin .right_zhuce > form .imgFile{
+		width:100px;height:30px;
+		vertical-align:middle;
+		font-size:20px;
+		text-indent:0px;
+	 }
+
+	#mainLogin .right_zhuce .imgUp{
+		display:inline-block;
+		vertical-align:middle;
+        border:1px solid rgba(0,0,0,0.2);
+		width:100px; height:100px;
+	}
+
+     #mainLogin .right_zhuce > form .btnZhuCe{
+        width:280px;height:40px;
+        margin:0 auto;
+     }
+	 #mainLogin .right_zhuce > form .btnZhuCe .sub1{
+		width:120px;height:40px;
+         font:bold 18px/40px "";
+         text-align: center;
+         background-color:rgba(0,0,0,.2);
+         color: rgba(0,0,0,.6);
+         outline: none;
+         border-radius: 18px;
+         cursor: pointer;
+         border:0;
+         text-indent: 0px;
+	 }
+    #mainLogin .right_zhuce > form .btnZhuCe .sub2{
+        width:120px;height:40px;
+        text-indent: 0;
+        background-color:rgba(0,0,0,.2);
+        color: rgba(0,0,0,.5);
+        font:20px/40px '黑体';
+        outline: none;
+       border-radius: 18px;
+        margin-left: 40px;
+        cursor:pointer;
+     }
+	 #mainLogin .right_zhuce > form p b{
+		color:white;
+		text-align: center;
+		background-color: red;
+		margin-top:-20px;
+		font-size:16px;
+	 }
+	#mainLogin .aAccount,
+	#mainLogin .apassWord{
+		height:30px;
+	}
+	#mainLogin .aAccount p,
+	#mainLogin .apassWord p{
+		color:white;
+		text-align:center;
+		font-size:18px;
+		background-color: skyblue;
+	}
+
+
+
+	/* 隐藏区域 */
+	#mainLogin .leftLogin .hidden1,
+	#mainLogin .leftLogin .hidden2,
+	#mainLogin .aAccount .absAccount,
+	#mainLogin .realPass,
+	#mainLogin .apassWord .absPassWord{
+		font:16px/26px "";
+		background:rgba(0,0,0,0.7);
+		padding:5px 10px;
+		border-radius:10px;
+		color:#fff;
+	}
+
+	#mainLogin .leftLogin .hidden1,
+    #mainLogin .leftLogin .hidden2{
+	  	width:100px;right:-125px;top: -5px;
+	}
+
+	#mainLogin .aAccount .absAccount,
+    #mainLogin .apassWord .absPassWord,
+    #mainLogin .realPass{
+		width:150px;right:-164px;top: -16px;
+	}
+
+
+	#mainLogin .realPass:before,
+	#mainLogin .leftLogin .hidden1:before,
+	#mainLogin .leftLogin .hidden2:before,
+	#mainLogin .aAccount .absAccount:before,
+	#mainLogin .apassWord .absPassWord:before{
+		content:"";
+		width:0px;height:0px;
+		z-index:2;
+		border:13px solid transparent;
+		border-right-color:rgba(0,0,0,0.7);
+		position:absolute;
+		top:4px;left:-24px;
+	}
+
+
+	#mainLogin .realPass,
+	#mainLogin .leftLogin .hidden1,
+	#mainLogin .leftLogin .hidden2,
+	#mainLogin .aAccount .absAccount,
+	#mainLogin .apassWord .absPassWord{display:none}
+
+	#mainLogin .cunZai{
+		height:40px;
+		text-align:center;
+		color:#E20C2C;
+		font: bold italic 16px/40px "黑体";
+        text-shadow: 1px 1px pink;
+        letter-spacing: 3px;
+        margin:12px 0 0 0;
+	}
+
+   .right_zhuce .error{
+   		height:16px;
+        padding:5px;
+   		font: italic 16px/16px "";
+   		text-align:center;
+   }
+
+.zhuXiao{
+	height:40px;
+	font:bold 16px/40px '';
+	padding-left:20px;
+}
+.zhuXiao img{
+	display:inline-block;
+	width:40px;
+	height:40px;
+	border-radius:50%;
+}
+.zhuXiao span{
+	color:blue;
+	margin:0 20px;
+}
+.zhuXiao b{
+	color:red;
+	display:inline-block;
+	font:bold italic 16px/30px '';
+	cursor:pointer;
+	margin-left:20px;
+	margin-top:10px;
+}

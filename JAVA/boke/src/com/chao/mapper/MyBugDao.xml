@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.chao.mapper.MyBugDao">
+	
+	
+	<!-- 查询错误的总条数 -->
+	<select id="selectMyBugCount" parameterType="QueryVo" resultType="Integer">
+		select count(1) from mybug
+		<if test="bugSearch != null">
+			where bugError like "%"#{bugSearch}"%"
+		</if>
+	</select>
+	
+	<!-- 查询所有错误信息 -->
+	<select id="selectMyBugAll" parameterType="QueryVo" resultType="MyBug">
+		select * from mybug
+		<if test="bugSearch != null">
+			where bugError like "%"#{bugSearch}"%"
+		</if>
+		limit #{startPage},#{size}
+		
+	</select>
+	
+	
+	<!-- 展示前五条数据 -->
+	<select id="selectMyBugFive" resultType="MyBug">
+		select * from mybug
+		limit 0,5
+	</select> 
+	
+	
+	<!-- 搜索查询 展示前三条-->
+	<select id="selectSearctMyBug" resultType="MyBug" parameterType="MyBug">
+		select * from mybug
+	</select>  
+	
+</mapper>

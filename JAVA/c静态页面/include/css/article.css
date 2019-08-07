@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+/* 左边 某篇笔记详细内容展示 */
+#ArticleContent{
+    background: url(../images/ibodybg.png) 587px -156px no-repeat;
+    float:left;
+    width:750px;
+}
+#ArticleContent .about_h {
+    font-size: 14px;
+    color: #666;
+    line-height: 30px;
+    height: 30px;
+    border-bottom: #d7d7d7 1px solid;
+    padding-left: 60px;
+    margin: 20px;
+    background: url(../images/5849.png) 40px 5px no-repeat;
+}
+
+#ArticleContent .index_about {
+    margin: 20px
+}
+#ArticleContent .index_about .c_titile {
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+#ArticleContent .index_about .box_c {
+    color: #999;
+    text-align: center
+}
+#ArticleContent .index_about .box_c > span {
+    margin: 0 10px;
+}
+
+#ArticleContent .index_about .infos {
+    overflow: hidden;
+    margin: 20px 5px;
+    line-height: 28px;
+    font-size: 16px;
+    color: #525554;
+}
+#ArticleContent .index_about .infos p {
+    margin-bottom: 16px;
+    line-height:20px;
+    text-indent: 2em;
+}
+#ArticleContent .index_about .keybq {
+    line-height: 30px;
+    height: 30px;
+    padding-left: 40px;
+    border: 1px solid #F0F0F0;
+    margin: 20px 0;
+}
+#ArticleContent .index_about .keybq span {
+    color: #099
+}
+/* 上下骗笔记 */
+#ArticleContent .index_about .nextinfo {
+    font: bold 14px/32px '';
+    margin-left: 20px;
+}
+#ArticleContent .index_about .nextinfo a {
+    font:14px/32px '';
+    color: #756f71
+}
+#ArticleContent .index_about .nextinfo a:hover {
+    color: skyblue;
+    text-decoration:underline;
+}
+
+
+/* 右边推荐文章 展示 */
+#rightLink{
+    float:right;
+    width:267px;height:100%;
+    background: url(../images/ibodybg.png) -170px -160px no-repeat #000;
+}
+/* 个人头像 */
+#rightLink .avatar {
+    margin: 10px auto;
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    background: url(../images/chao.jpg) center/cover no-repeat;
+    overflow: hidden;
+}
+#rightLink .avatar span {
+    display: block;
+    margin-top: 160px;
+    width: 160px;
+    height: 140px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, .5);
+    transition: all 0.2s;
+}
+#rightLink .avatar:hover span {
+    margin-top: 100px;
+
+}
+/* 座右铭 */
+#rightLink .topspaceinfo {
+    background: #e41635;
+    padding: 20px 20px;
+    color: #fff;
+    margin:20px 0;
+    text-shadow: 1px 1px rgba(0, 0, 0, .3);
+}
+#rightLink .topspaceinfo h1 {
+    font:bold italic 18px/38px '';
+}
+
+/* 联系信息 */
+#rightLink .about_c {
+    margin: 10px 0;
+    color: #fff;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+#rightLink .about_c p {
+    display: block;
+    padding-left: 40px;
+}
+#rightLink .about_c p:first-child,
+#rightLink .about_c p:nth-child(2),
+#rightLink .about_c p:nth-child(3),
+#rightLink .about_c p:nth-child(4),
+#rightLink .about_c p:last-child {
+    background: url(../images/about_c.png) no-repeat;
+}
+#rightLink .about_c p:first-child {
+    background-position: 15px 6px;
+}
+#rightLink .about_c p:nth-child(2) {
+    background-position: 15px -20px
+}
+#rightLink .about_c p:nth-child(3) {
+    background-position: 15px -48px
+}
+#rightLink .about_c p:nth-child(4) {
+    background-position: 15px -70px
+}
+#rightLink .about_c p:last-child {
+    background-position: 15px -97px
+}
+
+/* 推荐信息 */
+#rightLink .tj_t1,
+#rightLink .tj_t2,
+#rightLink .tj_t3 {
+    font-size: 16px;
+    color: #FFF;
+}
+#rightLink .tj_t1 {
+    background: #0f9c7c
+}
+#rightLink .tj_t2 {
+    background: #b0e516
+}
+#rightLink .tj_t3 {
+    background: #c0a516
+}
+
+#rightLink .tj_news h2 p,
+#rightLink .tj_new h2 p,
+#rightLink .links p {
+    height: 40px;
+    line-height: 40px;
+    width: 100px;
+    padding: 0 0 0 30px;
+    margin-top: 20px;
+    border-radius: 0 20px 20px 0;
+    text-shadow: 1px 1px rgba(0, 0, 0, .65) ;
+    color:#fff;
+}
+#rightLink .tj_news ul li p{
+    display: block;
+    margin-top:10px;
+    padding: 0 0 0 30px;
+    color:#bbbbbb;
+    font:16px/20px '';
+}
+#rightLink .links a{
+    display:block;
+    width:90px;
+    margin:30px auto;
+    font:16px/20px '';
+    text-align: center;
+    color:#fff;
+}
+#rightLink .links a:hover,
+#rightLink .tj_news ul li p:hover{
+    color:skyblue;
+    text-decoration:underline;
+}
+
+/*首页结束*/
+

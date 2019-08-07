@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.chao.mapper.ArticleDao">
+
+	<!-- 查询文章 -->
+	<select id="selectArticleAll" parameterType="PageData" resultType="Article">
+		select * from article
+		<where>
+			<if test="title != null and title != ''">
+				and title like "%"#{title}"%"
+			</if>
+			<if test="type != null and type != ''">
+				and articleType like "%"#{type}"%"
+			</if>
+			<if test="author != null and author != ''">
+				and author like "%"#{author}"%"
+			</if>
+		</where>
+		limit #{startPage},#{limit}
+	</select>
+	
+	<!-- 查询文章总数 -->
+	<select id="selectArticleCount" parameterType="PageData" resultType="Integer">
+		select count(1) from article
+		<where>
+			<if test="title != null and title != ''">
+				and title like "%"#{title}"%"
+			</if>
+			<if test="type != null and type != ''">
+				and articleType like "%"#{type}"%"
+			</if>
+			<if test="author != null and author != ''">
+				and author like "%"#{author}"%"
+			</if>
+		</where>
+	</select>
+	
+	<!-- 通过Id删除文章 -->
+	<delete id="deleteArticleById" parameterType="Integer">
+		delete from article
+		where articleId = #{id}
+	</delete>
+	
+	<!-- 通过 id 查询文章信息 编辑页 -->
+	<select id="selectArticleById" parameterType="Integer" resultType="Article">
+		select * from article
+		where articleId = #{id}
+	</select>
+	
+	<!-- 更新文章信息 -->
+	<update id="updateArticle" parameterType="Article">
+		update article set
+		title = #{title} ,
+		articleType = #{articleType} ,
+		author = #{author} ,
+		pageView = #{pageView} ,
+		img	= #{img},
+		content	= #{content},
+		articleLastTime	= #{articleLastTime}
+		where articleId = #{articleId}		
+	</update>
+	
+	<!-- 新增文章 -->
+	<insert id="insertArticle" parameterType="Article">
+		insert into article(title,author,img,articleTime,articleLastTime,content,articleType)
+		values(#{title},#{author},#{img},#{articleTime},#{articleLastTime},#{content},#{articleType})
+	</insert>
+	
+	
+<!-- ==================文章评论页================= -->
+	<!-- 查询文章评论信息 -->
+	<select id="selectCritique" parameterType="PageData" resultType="Critique">
+		select * from critique
+		<where>
+			<if test="article_id != null and article_id != ''">
+				and article_id = #{article_id}
+			</if>
+			<if test="user_account != null and user_account != ''">
+				and user_account like "%"#{user_account}"%"
+			</if>
+		</where>
+		limit #{startPage},#{limit}
+	</select>
+	
+	<!-- 查询评论条数 -->
+	<select id="selectCritiqueCount" parameterType="PageData" resultType="Integer">
+		select count(1) from critique
+		<where>
+			<if test="article_id != null and article_id != ''">
+				and article_id = #{article_id}
+			</if>
+			<if test="user_account != null and user_account != ''">
+				and user_account like "%"#{user_account}"%"
+			</if>
+		</where>
+	</select>
+	
+	<!-- 通过 id 删除评论 -->
+	<delete id="deleteCritiqueById" parameterType="Integer">
+		delete from critique
+		where critique_id = #{id}
+	</delete>
+	
+	
+	<!-- 查询我的bug信息 -->
+	<select id="selectMyBug" parameterType="PageData" resultType="MyBug">
+		select * from mybug
+		<where>
+			<if test="bugError != null and bugError != ''">
+				and bugError like "%"#{bugError}"%"
+			</if>
+		</where>
+		order by bugId desc
+		limit #{startPage},#{limit}
+	</select>
+	
+	<!-- 查询bug总数 -->
+	<select id="selectMyBugCount" parameterType="PageData" resultType="Integer">
+		select count(1) from mybug
+		<where>
+			<if test="bugError != null and bugError != ''">
+				and bugError like "%"#{bugError}"%"
+			</if>
+		</where>
+	</select>
+	
+	<!-- 通过id 删除bug -->
+	<delete id="deleteMyBugById" parameterType="Integer">
+		delete from mybug
+		where bugId = #{id}
+	</delete>
+	
+	<!-- 回显bug 信息 -->
+	<select id="editMyBug" parameterType="Integer" resultType="MyBug">
+		select * from mybug
+		where bugId = #{id}
+	</select>
+	
+	<!-- 通过id 编辑bug -->
+	<update id="updateMyBug" parameterType="MyBug">
+		update mybug set
+		bugError = #{bugError},
+		bugReason = #{bugReason},
+		bugSolve = #{bugSolve}
+		where bugId = #{bugId}
+	</update>
+	
+	<!-- 新增 bug 信息 -->
+	<insert id="insertMyBugInfo" parameterType="MyBug">
+		insert into mybug(bugError,bugReason,bugSolve)
+		values(#{bugError},#{bugReason},#{bugSolve}) 
+	</insert>
+	
+</mapper>

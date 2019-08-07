@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html  >
+<head>
+        <title>个人博客——留言板</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link href="../include/css/reset.css"   rel="stylesheet">  <!--重置样式 -->
+        <link href="../include/css/public.css"   rel="stylesheet">  <!--公共样式 -->
+        <link href="../include/iconfont/iconfont.css" rel="stylesheet">   <!--阿里图标css -->
+        <link href="../include/css/header.css"  rel="stylesheet">  <!--头部公用样式 -->
+        <link href="../include/css/articleCritique.css" rel="stylesheet">
+
+        <script src="../include/js/jquery-1.8.0.min.js"></script> <!--jq -->
+</head>
+
+<body>
+    <div id="ibody">
+        <!-- 头部导航 -->
+        <div id="header" class="rela">
+            <div class="title">
+                <h1>星之轨迹.梦中的灵魂</h1>
+                <h2>
+                   &emsp;追随流星的脚步,寻求不止息的梦想====学会做一个有心人,去做一件有心事
+                </h2>
+            </div>
+            <div class="logo abso">
+                 <a href="#"></a>
+            </div>
+
+            <div class="topnav">
+                <a href="../index.html" class="onred">首页</a>
+                <a href="aboutMe.html">关于我</a>
+                <a href="album.html">我的相册</a>
+                <a href="comment.html">留言板</a>
+                <a href="../admin/login.html" target="_blank" >后台管理(待隐藏)</a>
+            </div>
+        </div>
+
+    <div class="clearFix">
+        <div id="articleCritique">
+           <h2 class="about_h">您现在的位置是：
+                <a href="../index.html">首页</a>&emsp;&gt;&emsp;
+                <a href="articleDetail.html">详细内容</a>&emsp;&gt;&emsp;
+                <a href="articleCritique.html">评论</a>&emsp;&gt;&emsp;
+                <span style="color:red;">全部评论<span>
+            </h2>
+            <div class="template1">
+                <div class="newComment">
+                   <p>全部 评 论</p>
+                </div>
+            </div>
+            <!-- 展示 留言 信息 账户信息 -->
+            <div class="template">
+                <ul style="margin-bottom:20px;">
+                        <li>
+                            <img src="../include/images/001.jpg">
+                       </li>
+                       <li><span>帐号昵称</span>
+                       <time>评论时间</time></li>
+                       <li>
+                          评论内容 评论内容 评论内容 评论内容
+                       </li>
+
+                </ul>
+                <div class="hr"></div>
+                <ul style="margin-bottom:20px;">
+                       <li>
+                            <img src="../include/images/002.jpg">
+                       </li>
+                       <li><span>${comment.user_account}</span>
+                       <time>${comment.critique_time}</time></li>
+                       <li>
+                          ${comment.critique_content}
+                       </li>
+                </ul>
+                <div class="hr"></div>
+
+                <ul style="margin-bottom:20px;">
+                       <li>
+                            <img src="../include/images/003.jpg">
+                       </li>
+                       <li><span>666</span>
+                       <time>6666</time></li>
+                       <li>
+                          6666666
+                       </li>
+                </ul>
+                <div class="hr"></div>
+
+                <!-- 分页 -->
+                <div class="page">
+                    <a href="###">&lt;</a>
+                    <a href="###">1</a>
+                    <a href="###">2</a>
+                    <a href="###">3</a>
+                    <a href="###">4</a>
+                    <a href="###">&gt;</a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 右边 推荐文章 展示 -->
+        <div id="rightLink">
+            <!-- 个人头像 -->
+            <a href="aboutMe.html">
+                <div class="avatar">
+                    <span>关 于 chao</span>
+                </div>
+            </a>
+
+            <div class="topspaceinfo">
+                <h1>随遇而安，安而随遇</h1>
+                <p>于千万人之中,</p>
+                <p>我遇见了我所遇见的人....</p>
+            </div>
+            <div class="about_c">
+                <p>网名：星痕丶夜中魂</p>
+                <p>职业：一只程序猿</p>
+                <p>籍贯：河北-廊坊</p>
+                <p>QQ：244377606</p>
+                <p>邮箱：244377606@qq.com</p>
+            </div>
+
+            <div class="tj_news">
+                <h2>
+                    <p class="tj_t1">最新笔记</p>
+                </h2>
+               <!--  最新笔记 -->
+                <ul>
+                  <li>
+                      <a href="###">
+                          <p> ${newArticle.getTitle()}</p>
+                          <p> ${newArticle.getTitle()}</p>
+                          <p> ${newArticle.getTitle()}</p>
+                          <p> ${newArticle.getTitle()}</p>
+                          <p> ${newArticle.getTitle()}</p>
+                      </a>
+                  </li>
+                </ul>
+
+                <!-- 推荐笔记 -->
+                <h2>
+                  <p class="tj_t2">推荐笔记</p>
+                </h2>
+
+                <ul>
+                  <li><a href="###">
+                          <p> ${hot.getTitle()}</p>
+                          <p> ${hot.getTitle()}</p>
+                          <p> ${hot.getTitle()}</p>
+                          <p> ${hot.getTitle()}</p>
+                          <p> ${hot.getTitle()}</p>
+                      </a>
+                  </li>
+                </ul>
+
+            </div>
+            <div class="links">
+                <p class="tj_t3">有情连接</p>
+                <a href="http://user.qzone.qq.com/3535305171">QQ 空 间</a>
+            </div>
+            <div class="copyright">
+                Design by  超
+            </div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript">
+        var articleCritique = $("#articleCritique").height();  //获取右边笔记的 高度
+        $("#rightLink").css({minHeight:articleCritique});  //设置右边的最小高度
+    </script>
+</body>
+</html>

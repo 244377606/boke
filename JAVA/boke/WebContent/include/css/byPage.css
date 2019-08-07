@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.byPage {
+	width: 300px;
+	margin: 50px auto;
+}
+.byPage>li {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	text-align: center;
+	margin-left: 10px;
+	font: bold 18px/30px "宋体";
+	cursor: pointer;
+	border-radius: 50%;
+	color: #000;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.byPage>li a {
+	display: inline-block;
+	color: #000;
+	width: 100%;
+	height: 100%;
+}
+
+.byPage>li b {
+	color: red
+}
+
+.byPage>li:hover {
+	background-color: #eee;
+}
+
+.byPage .not-allowed {
+	cursor: not-allowed;
+}
+
+.byPage i {
+	font-style: normal;
+}

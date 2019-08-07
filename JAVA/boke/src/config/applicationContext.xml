@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <beans  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+    xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+<!-- 加载数据库连接信息 -->        
+<context:property-placeholder location="classpath:config/db.properties"/>        
+
+<!-- 配置c3p0连接池 -->
+<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+	<property name="driverClass" value="${db.driver}"/>
+	<property name="jdbcUrl" value="${db.url}"/>
+	<property name="user" value="${db.username}"/>
+	<property name="password" value="${db.password}"/>
+	
+	<!-- 链接超时 -->
+	<!-- 设置为true，异步检测连接的有效性 -->
+    <property name="testConnectionOnCheckin" value="true"/> 
+    <!-- 设置为true，所有的连接都将检测其有效性 性能差 -->   
+    <property name="testConnectionOnCheckout" value="false"/>
+    <!-- 设为 30，这个数字要根据项目情况设定，比8小时小就好 单位是秒 -->
+    <property name="idleConnectionTestPeriod" value="1800"/> 
+</bean>
+
+<!-- mybatis工厂 -->
+<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="configLocation" value="classpath:config/sqlMapConfig.xml"/>
+	<property name="dataSource" ref="dataSource"/>
+</bean>
+
+<!-- mapper代理扫描 -->
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<property name="basePackage" value="com.chao.mapper"/>
+</bean>
+
+</beans>

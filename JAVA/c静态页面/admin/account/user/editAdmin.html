@@ -1,0 +1,60 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>数据展示</title>
+
+  <link href="../../layui/css/layui.css" rel="stylesheet"  media="all">
+
+  <style type="text/css">
+      .username{
+      	width:100%;
+        height:60px;
+      }
+      .query-btn{
+      	margin-left:10px;
+      }
+      body{padding: 50px;}
+  </style>
+
+  <script src="../../layui/layui.js"></script>
+</head>
+<body>
+	<!-- 条件删选  -->
+	 <form class="layui-form layui-form-pane" action="###">
+		 <div class="username" >
+		    <label class="layui-form-label">用户名</label>
+		    <div class="layui-input-inline">
+		        <input type="text" id="username"
+                     name="username" lay-verify="required"
+                     placeholder="请输入用户名" autocomplete="off" class="layui-input">
+		    </div>
+		 </div>
+
+         <div class="username" >
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="password" id="username"
+                     name="username" lay-verify="required"
+                     placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+         </div>
+
+		 <div class="username">
+		    <label class="layui-form-label">性别</label>
+		    <div class="layui-input-inline sex-select">
+		        <select>
+    		          <option value="">请选择</option>
+    		          <option value="男">男</option>
+    		          <option value="女">女</option>
+		        </select>
+		    </div>
+		</div>
+
+
+        <div>
+            <input type="button" id="query"
+               class="layui-btn layui-btn-warm query-btn" value="检索" />
+        </div>
+	</form>
+</body>
+</html>
